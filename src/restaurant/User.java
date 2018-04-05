@@ -6,8 +6,8 @@ public class User{
 	private String mail;
 	private String pass;
 	private String address;
+	private String phone;
 	private int id;
-	private int idOrder;
 	private int idType;
 
 	public String getName(){
@@ -51,6 +51,14 @@ public class User{
 		this.address = address;
 	}
 
+	public String getPhone(){
+		return this.phone;
+	}
+
+	public void setPhone(String phone){
+		this.phone = phone;
+	}
+
 	public int getId(){
 		return this.id;
 	}
@@ -59,20 +67,11 @@ public class User{
 		this.id = id;
 	}
 
-	public int getIdOrder(){
-		return this.idOrder;
-	}
-
-	public void setIdOrder(int idOrder){
-		this.idOrder = idOrder;
-	}
-
 	public int getIdType(){
 		return this.idType;
 	}
 
 	public void setIdType(int idType){
-
 		this.idType = idType;
 	}
 

@@ -24,20 +24,19 @@ public class InitSession extends HttpServlet {
 
         try (DBManager manager = new DBManager()) {
 
-            String mail = request.getParameter("init");
+            String mail = request.getParameter("login");
             String userpass = request.getParameter("pass");
-            User user = manager.searchUser(mail);
+            User user = manager.searchUser(mail, userpass);
+           
 
-            if(user!= null){
-                if(user.getPass().equals(userpass)){
+
+            if(user.getMail() != null){
                     session.setAttribute("user",user);
                     response.sendRedirect("init");
-                }else{
-                    response.sendRedirect("index.html");
-                }
+                
             }else{
-                response.sendRedirect("createaccount.html");
-            }
+                response.sendRedirect("index.html");
+            }    
 
         }catch(SQLException | NamingException ex){
 

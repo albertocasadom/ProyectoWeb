@@ -1,8 +1,14 @@
+mysql -h mysql.lab.it.uc3m.es -u 18_comweb_04 -p -D 18_comweb_04d
+FTjqsjbH
 
 // TABLA USERS 
 
-CREATE TABLE Users( name VARCHAR(255) NOT NULL, surname VARCHAR(255) NOT NULL, mail VARCHAR(255) NOT NULL, pass VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, id_order INT NULL, id_type INT NOT NULL, id INT NOT NULL auto_increment, PRIMARY KEY (id))ENGINE=INNODB;
+CREATE TABLE Users( name VARCHAR(255) NOT NULL, surname VARCHAR(255) NOT NULL, mail VARCHAR(255) NOT NULL, pass VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, phone VARCHAR(255) NOT NULL, id_type INT NOT NULL, id INT NOT NULL auto_increment, PRIMARY KEY (id))ENGINE=INNODB;
+
+DROP TABLE Users;
 
 // AÑADIR USUARIO
 
+INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address, Users.phone, Users.id_type) VALUES ("Madru", "Kortz", "94kortz@gmail.com", "comweb","Lab sotano", "645195421", 1);
 
+INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address, Users.phone, Users.id_type) VALUES ("Alberto", "Casado Medina", "albertocasadom@gmail.com", "comweb1","Lab sotano", "717147137", 1);

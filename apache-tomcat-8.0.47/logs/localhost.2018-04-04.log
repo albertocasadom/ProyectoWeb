@@ -474,3 +474,5 @@
 04-Apr-2018 19:00:05.707 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
 04-Apr-2018 19:00:07.384 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
 04-Apr-2018 19:00:07.384 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+04-Apr-2018 19:20:05.274 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+04-Apr-2018 19:20:05.274 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

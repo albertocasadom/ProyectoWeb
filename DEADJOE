@@ -1,0 +1,57 @@
+
+*** These modified files were found in JOE when it aborted on Thu Apr  5 19:00:21 2018
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+/var/home/lab/alum1/03/17/102/Escritorio/Proyecto/.git/COMMIT_EDITMSG
+
+*** File '/var/home/lab/alum1/03/17/102/Escritorio/Proyecto/.git/COMMIT_EDITMSG'
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: GRADO EN INGENIERIA TELEMATICA <0317102@lab.it.uc3m.es>
+#
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   DBconfig.txt
+#	modified:   apache-tomcat-8.0.47/logs/catalina.2018-04-04.log
+#	modified:   apache-tomcat-8.0.47/logs/catalina.out
+#	modified:   apache-tomcat-8.0.47/logs/localhost.2018-04-04.log
+#	modified:   apache-tomcat-8.0.47/webapps/proyecto/META-INF/context.xml
+#	modified:   apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/restaurant/DBManager.class
+#	modified:   apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/restaurant/InitSession.class
+#	modified:   apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/restaurant/User.class
+#	modified:   apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/web.xml
+#	modified:   apache-tomcat-8.0.47/webapps/proyecto/createaccount.html
+#	modified:   apache-tomcat-8.0.47/webapps/proyecto/index.html
+#	modified:   src/restaurant/DBManager.java
+#	modified:   src/restaurant/InitSession.java
+#	modified:   src/restaurant/User.java
+#	deleted:    src/restaurant/main.java
+#
+# Untracked files:
+#	apache-tomcat-8.0.47/logs/catalina.2018-04-05.log
+#	apache-tomcat-8.0.47/logs/host-manager.2018-04-05.log
+#	apache-tomcat-8.0.47/logs/localhost.2018-04-05.log
+#	apache-tomcat-8.0.47/logs/localhost_access_log.2018-04-05.txt
+#	apache-tomcat-8.0.47/logs/manager.2018-04-05.log
+#	apache-tomcat-8.0.47/webapps/proyecto/ViewClient.jsp
+#	apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/restaurant/CreateAccount.class
+#	apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/restaurant/Order.class
+#	apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/restaurant/ViewClient.class
+#	apache-tomcat-8.0.47/webapps/proyecto/init.css
+#	apache-tomcat-8.0.47/webapps/proyecto/mosaico.jpg
+#	apache-tomcat-8.0.47/webapps/proyecto/mosaico1.jpg
+#	apache-tomcat-8.0.47/webapps/proyecto/registrate.css
+#	apache-tomcat-8.0.47/work/Catalina/localhost/proyecto/
+#	src/restaurant/CreateAccount.java
+#	src/restaurant/Order.java
+#	src/restaurant/
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc

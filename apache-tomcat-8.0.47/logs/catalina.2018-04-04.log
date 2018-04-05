@@ -1719,3 +1719,10 @@ Caused by: java.net.BindException: La dirección ya se está usando
 04-Apr-2018 19:00:07.430 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9102"]
 04-Apr-2018 19:00:07.436 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 04-Apr-2018 19:00:07.437 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in 1132 ms
+04-Apr-2018 19:20:05.192 INFORMACIÓN [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9102"]
+04-Apr-2018 19:20:05.247 INFORMACIÓN [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+04-Apr-2018 19:20:05.248 INFORMACIÓN [Thread-5] org.apache.catalina.core.StandardService.stopInternal Parando servicio Catalina
+04-Apr-2018 19:20:05.300 INFORMACIÓN [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9102"]
+04-Apr-2018 19:20:05.305 INFORMACIÓN [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+04-Apr-2018 19:20:05.311 INFORMACIÓN [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9102"]
+04-Apr-2018 19:20:05.312 INFORMACIÓN [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

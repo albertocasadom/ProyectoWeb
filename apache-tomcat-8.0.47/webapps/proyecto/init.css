@@ -1,0 +1,98 @@
+body{
+
+	background-image: url("mosaico1.jpg");
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	font-family: arial, verdana, sans-serif;
+
+	
+}
+
+label{
+	font-size: 25px;
+}
+
+#txtalgn{
+	margin: .3em 47px;
+}
+
+#txtalgn1{
+	margin: .3em 
+}
+
+.in{
+	height: 30px ;
+}
+
+#centralbox{
+	align: center;
+	margin-top: 70px;
+	margin-left: 40px;
+}
+
+
+input[name="init"] {
+    padding:10px 25px; 
+    background:#7eb9dc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 7px;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 50px;
+	margin-left: 32px;
+	width: 120px;
+}
+
+input[name="create"] {
+    padding:10px 25px; 
+    background:#b4133f; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 7px;
+    position: absolute;
+	top: 45%;
+	left: 45%;
+	margin-top: 100px;
+	margin-left: -75px;
+	width: 120px; 
+
+}
+
+input[type=email] {
+    padding:5px; 
+    border:2px solid #7eb9dc; 
+    -webkit-border-radius: 5px;
+    border-radius: 7px;
+}
+
+input[type=password] {
+    padding:5px; 
+    border:2px solid #7eb9dc; 
+    -webkit-border-radius: 5px;
+    border-radius: 7px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+#container{
+	background-color: white;
+	border-radius: 20%;
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	margin-top: -100px;
+	margin-left: -125px;
+
+
+
+}
+
