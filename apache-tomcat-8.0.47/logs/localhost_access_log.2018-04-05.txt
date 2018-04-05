@@ -2319,3 +2319,10 @@ l HTTP/1.1" 304 -
 163.117.168.148 - - [05/Apr/2018:18:51:31 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
 163.117.168.148 - - [05/Apr/2018:18:51:32 +0200] "GET /proyecto/index.html HTTP/1.1" 304 -
 163.117.168.148 - - [05/Apr/2018:18:51:32 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+163.117.168.148 - - [05/Apr/2018:19:10:26 +0200] "GET /proyecto/index.html HTTP/1.1" 304 -
+163.117.168.148 - - [05/Apr/2018:19:10:26 +0200] "GET /proyecto/init.css HTTP/1.1" 304 -
+163.117.168.148 - - [05/Apr/2018:19:10:26 +0200] "GET /proyecto/mosaico1.jpg HTTP/1.1" 304 -
+163.117.168.148 - - [05/Apr/2018:19:10:39 +0200] "GET /proyecto/check?login=94kortz%40gmail.com&pass=webcom&init=Iniciar+Sesi%C3%B3n+ HTTP/1.1" 302 -
+163.117.168.148 - - [05/Apr/2018:19:10:51 +0200] "GET /proyecto/check?login=94kortz%40gmail.com&pass=comweb&init=Iniciar+Sesi%C3%B3n+ HTTP/1.1" 302 -
+163.117.168.148 - - [05/Apr/2018:19:10:51 +0200] "GET /proyecto/init HTTP/1.1" 200 323
+163.117.168.148 - - [05/Apr/2018:19:11:00 +0200] "GET /proyecto/search?rest=&search=Buscar HTTP/1.1" 404 1034

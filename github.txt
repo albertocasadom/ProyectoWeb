@@ -1,0 +1,14 @@
+git add .
+git commit -m "mensaje de actualizacion"
+git push
+
+Descargar:
+
+git clone url
+
+Actualizar:
+
+git init
+
+git pull
+
