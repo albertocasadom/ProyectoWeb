@@ -26,7 +26,7 @@ public class DBManager implements AutoCloseable {
 
         Context initCtx = new InitialContext();
         Context envCtx = (Context) initCtx.lookup("java:comp/env");
-        DataSource ds = (DataSource) envCtx.lookup("jdbc/Users");
+        DataSource ds = (DataSource) envCtx.lookup("webrestaurants");
         connection = ds.getConnection();
        
     }
@@ -57,11 +57,11 @@ public class DBManager implements AutoCloseable {
                 user.setName(rs.getString("name"));
                 user.setSurname(rs.getString("surname"));
                 user.setMail(rs.getString("mail"));
-                user.setAddress(rs.getString("address"));
+                user.setAddress(rs.getString("address_user"));
+                user.setCiudad(rs.getString("ciudad_user"));
                 user.setPhone(rs.getString("phone"));
-                user.setId(rs.getInt("id"));
                 user.setIdType(rs.getInt("id_type"));
-
+                user.setId(rs.getInt("id_user"));
                 System.out.println("Usuario encontrado");
                
           
@@ -79,7 +79,7 @@ public class DBManager implements AutoCloseable {
 
     }
 
-    public boolean insertUser(String name, String surname, String mail, String pass, String address, String phone)throws SQLException{
+    public boolean insertUser(String name, String surname, String mail, String pass, String address, String ciudad, String phone)throws SQLException{
 
         User checkuser = searchUser(mail, pass);
         boolean success = false;
@@ -88,7 +88,7 @@ public class DBManager implements AutoCloseable {
 
         if(checkuser.getMail() == null){
 
-            String query = "INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address, Users.phone, Users.id_type) VALUES ( ?, ?, ?, ? ,? , ?, 1)";
+            String query = "INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address_user, Users.ciudad_user, Users.phone, Users.id_type) VALUES ( ?, ?, ?, ? ,? , ?, ?, 1)";
             try(PreparedStatement st = connection.prepareStatement(query)){
                 System.out.println("AÑADIENDO USUARIO A LA BASE DE DATOS...");
                 st.setString(1, name);
@@ -96,7 +96,8 @@ public class DBManager implements AutoCloseable {
                 st.setString(3, mail);
                 st.setString(4, pass);
                 st.setString(5, address);
-                st.setString(6, phone);
+                st.setString(6, ciudad);
+                st.setString(7, phone);
                 
                 st.executeUpdate();
 
@@ -120,5 +121,42 @@ public class DBManager implements AutoCloseable {
         connection.setAutoCommit(true);
         return success;
     }
+
+    public ArrayList<Order> searchOrdersUser(int id_user) throws SQLException{
+
+        ArrayList<Order> orderlist = new ArrayList<Order>();
+
+        String query = "SELECT * FROM Orders INNER JOIN Users ON Orders.id_user = Users.id_user WHERE Users.id_user = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_user);
+            ResultSet rs = st.executeQuery();
+            
+           
+            while(rs.next()){
+
+                Order order = new Order();
+                order.setIdOrder(rs.getInt("id_order"));
+                order.setState(rs.getString("state"));
+                order.setIdUser(rs.getInt("id_user"));
+                order.setCiudad(rs.getString("ciudad"));
+                order.setAddressOrder(rs.getString("address_order"));
+                order.setPrecioTotal(rs.getFloat("precio_total"));
+                order.setFechaHora(rs.getTimestamp("fecha_hora"));
+                order.setIdRest(rs.getInt("id_rest"));
+                
+                orderlist.add(order);
+
+                System.out.println(order.getIdOrder());
+               
+          
+            }
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        return orderlist;
+      }
 
 }

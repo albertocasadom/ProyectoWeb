@@ -31,11 +31,12 @@ public class CreateAccount extends HttpServlet {
             String userpass = request.getParameter("newpass");
             String reuserpass = request.getParameter("newpassrepeat");
             String address = request.getParameter("address");
+            String ciudad = request.getParameter("ciudad");
             String tel = request.getParameter("phone");
             boolean insertok = false;
 
             if((mail.equals(remail)) && (userpass.equals(reuserpass))){
-                insertok = manager.insertUser(name,surname,mail,userpass,address,tel);
+                insertok = manager.insertUser(name,surname,mail,userpass,address,ciudad,tel);
 
                 if(insertok == true){
                     response.sendRedirect("index.html");  

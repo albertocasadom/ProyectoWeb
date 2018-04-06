@@ -6,6 +6,7 @@ public class User{
 	private String mail;
 	private String pass;
 	private String address;
+	private String ciudad;
 	private String phone;
 	private int id;
 	private int idType;
@@ -49,6 +50,14 @@ public class User{
 
 	public void setAddress(String address){
 		this.address = address;
+	}
+
+	public String getCiudad(){
+		return this.address;
+	}
+
+	public void setCiudad(String ciudad){
+		this.ciudad = ciudad;
 	}
 
 	public String getPhone(){

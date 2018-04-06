@@ -7,16 +7,35 @@ CREATE TABLE Users(name VARCHAR(255) NOT NULL, surname VARCHAR(255) NOT NULL, ma
 
 DROP TABLE Users;
 
+/* COMENTARIOS: Hemos decidido implementar la variable ciudad como String ya que lo que recibiremos de los usuarios será un nombre de ciudad y no un identificador, por lo que nos simplificará las operaciones de búsqueda en cuanto a código. Sin embargo, pagamos por ello un mayor coste computacional en la base de datos. */
+
 //TABLA RESTAURANTS
 
 CREATE TABLE Restaurants(id_rest INT NOT NULL auto_increment, name_rest VARCHAR(255) NOT NULL, address_rest VARCHAR(255) NOT NULL, ciudad VARCHAR(255) NOT NULL, phone_rest VARCHAR(255) NOT NULL, typ_rest ENUM ('ff', 'mar','eu', 'asa', 'cafe', 'asia') NOT NULL, PRIMARY KEY(id_rest)) ENGINE=INNODB;
 
 // TABLA ORDERS
 
-CREATE TABLE Orders(id_order INT NOT NULL auto_increment, state ENUM('term', 'ready', 'deliver', 'inprogress') NOT NULL, id_user INT NOT NULL, address_order VARCHAR(255) NOT NULL, ciudad VARCHAR(255) NOT NULL, precio_total DECIMAL(6,2) NOT NULL, fecha_hora TIMESTAMP NOT NULL, id_rest INT NOT NULL, CONSTRAINT FOREIGN KEY (id_rest) REFERENCES Restaurant(id_rest), PRIMARY KEY (id_order))ENGINE=INNODB;
+CREATE TABLE Orders(id_order INT NOT NULL auto_increment, state ENUM('term', 'ready', 'deliver', 'inprogress') NOT NULL, id_user INT NOT NULL, address_order VARCHAR(255) NOT NULL, ciudad VARCHAR(255) NOT NULL, precio_total DECIMAL(6,2) NOT NULL, fecha_hora TIMESTAMP NOT NULL, id_rest INT NOT NULL, CONSTRAINT FOREIGN KEY (id_rest) REFERENCES Restaurants(id_rest), PRIMARY KEY (id_order))ENGINE=INNODB;
+
+//TABLA ADMIN_REST
+
+CREATE TABLE AdminRest(id_rest INT NOT NULL, id_user_admin INT NOT NULL, CONSTRAINT FOREIGN KEY (id_rest) REFERENCES Restaurants(id_rest), CONSTRAINT FOREIGN KEY (id_user_admin) REFERENCES Users(id_user))ENGINE=INNODB;
+
+// TABLA PLATOS
+
+CREATE TABLE Platos(id_plato INT NOT NULL auto_increment, precio DECIMAL(6,2) NOT NULL, id_rest INT NOT NULL, img BLOB NULL, descripcion VARCHAR(255) NULL, CONSTRAINT FOREIGN KEY (id_rest) REFERENCES Restaurants(id_rest), PRIMARY KEY(id_plato))ENGINE=INNODB; 
+
+//TABLA ORDERPLATOS
+
+CREATE TABLE OrderPlato(id_order INT NOT NULL, id_plato INT NOT NULL, CONSTRAINT FOREIGN KEY (id_order) REFERENCES  Orders(id_order), CONSTRAINT FOREIGN KEY (id_plato) REFERENCES Platos(id_plato))ENGINE=INNODB;
 
 // AÑADIR USUARIO
 
-INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address, Users.phone, Users.id_type) VALUES ("Madru", "Kortz", "94kortz@gmail.com", "comweb","Lab sotano", "645195421", 1);
+INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address_user, Users.ciudad_user, Users.phone, Users.id_type) VALUES ("Madru", "Kortz", "94kortz@gmail.com", "comweb","Lab sotano", "Leganes", "645195421", 1);
 
-INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address, Users.phone, Users.id_type) VALUES ("Alberto", "Casado Medina", "albertocasadom@gmail.com", "comweb1","Lab sotano", "717147137", 1);
+INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address_user, Users.ciudad_user, Users.phone, Users.id_type) VALUES ("Alberto", "Casado Medina", "albertocasadom@gmail.com", "comweb1","Lab sotano","Leganes", "717147137", 1);
+
+INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address_user, Users.ciudad_user, Users.phone, Users.id_type) VALUES ("Admin", "Ad Min", "admin@gmail.com", "admin","Lab sotano","Leganes", "717147137", 2);
+
+
+

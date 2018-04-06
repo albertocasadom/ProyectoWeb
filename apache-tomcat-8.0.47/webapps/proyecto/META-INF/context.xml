@@ -1,6 +1,6 @@
 <Context reloadable="true">
 
-  <Resource name="jdbc/Users"
+  <Resource name="webrestaurants"
               auth="Container"
               type="javax.sql.DataSource"
               username="18_comweb_04"
