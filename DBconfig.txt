@@ -3,9 +3,17 @@ FTjqsjbH
 
 // TABLA USERS 
 
-CREATE TABLE Users( name VARCHAR(255) NOT NULL, surname VARCHAR(255) NOT NULL, mail VARCHAR(255) NOT NULL, pass VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, phone VARCHAR(255) NOT NULL, id_type INT NOT NULL, id INT NOT NULL auto_increment, PRIMARY KEY (id))ENGINE=INNODB;
+CREATE TABLE Users(name VARCHAR(255) NOT NULL, surname VARCHAR(255) NOT NULL, mail VARCHAR(255) NOT NULL, pass VARCHAR(255) NOT NULL, address_user VARCHAR(255) NOT NULL, ciudad_user VARCHAR(255) NOT NULL, phone VARCHAR(255) NOT NULL, id_type INT NOT NULL, id_user INT NOT NULL auto_increment, PRIMARY KEY (id_user))ENGINE=INNODB;
 
 DROP TABLE Users;
+
+//TABLA RESTAURANTS
+
+CREATE TABLE Restaurants(id_rest INT NOT NULL auto_increment, name_rest VARCHAR(255) NOT NULL, address_rest VARCHAR(255) NOT NULL, ciudad VARCHAR(255) NOT NULL, phone_rest VARCHAR(255) NOT NULL, typ_rest ENUM ('ff', 'mar','eu', 'asa', 'cafe', 'asia') NOT NULL, PRIMARY KEY(id_rest)) ENGINE=INNODB;
+
+// TABLA ORDERS
+
+CREATE TABLE Orders(id_order INT NOT NULL auto_increment, state ENUM('term', 'ready', 'deliver', 'inprogress') NOT NULL, id_user INT NOT NULL, address_order VARCHAR(255) NOT NULL, ciudad VARCHAR(255) NOT NULL, precio_total DECIMAL(6,2) NOT NULL, fecha_hora TIMESTAMP NOT NULL, id_rest INT NOT NULL, CONSTRAINT FOREIGN KEY (id_rest) REFERENCES Restaurant(id_rest), PRIMARY KEY (id_order))ENGINE=INNODB;
 
 // AÑADIR USUARIO
 

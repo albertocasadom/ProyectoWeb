@@ -1,29 +1,32 @@
 
 USERS:
-	-id_user 				INT NOT NULL autoincrement (PK)
 	-name					VARCHAR(255) NOT NULL
 	-surname				VARCHAR(255) NOT NULL
 	-mail					VARCHAR(255) NOT NULL
 	-pass					VARCHAR(255) NOT NULL
 	-address_user			VARCHAR(255) NOT NULL
+	-ciudad_user			VARCHAR(255) NOT NULL
 	-phone					VARCHAR(255) NOT NULL
 	-id_type				INT NOT NULL
+	-id_user 				INT NOT NULL autoincrement (PK)
 
 ORDERS:
 	-id_order				INT NOT NULL autoincrement (PK)
-	-state					VARCHAR(255) NOT NULL		
+	-state					ENUM ('term', 'ready', 'deliver', 'inprogress') NOT NULL		
 	-id_user				INT NOT NULL (FK -> USERS.id_user)
+	-ciudad					VARCHAR(255) NOT NULL
 	-address_order			VARCHAR(255) NOT NULL
 	-precio_total			DECIMAL(6,2) NOT NULL
-	-fecha_hora				DATETIME
-	-id_restaurant			INT NOT NULL (FK -> RESTAURANT.id_rest)
+	-fecha_hora				TIMESTAMP
+	-id_rest			INT NOT NULL (FK -> RESTAURANT.id_rest)
 
 RESTAURANT
 	-id_rest				INT NOT NULL autoincrement (PK)		
 	-name_rest				VARCHAR(255) NOT NULL
 	-address_rest			VARCHAR(255) NOT NULL
+	-ciudad					VARCHAR(255) NOT NULL
 	-phone_rest				VARCHAR(255) NOT NULL
-	-typ_rest				INT NOT NULL	
+	-typ_rest				ENUM ('ff', 'mar','eu', 'asa', 'cafe', 'asia')	
 
 ADMIN_REST
 	-id_rest				INT NOT NULL (FK -> RESTAURANT.id_rest)
