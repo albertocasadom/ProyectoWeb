@@ -1,0 +1,45 @@
+
+USERS:
+	-id_user 				INT NOT NULL autoincrement (PK)
+	-name					VARCHAR(255) NOT NULL
+	-surname				VARCHAR(255) NOT NULL
+	-mail					VARCHAR(255) NOT NULL
+	-pass					VARCHAR(255) NOT NULL
+	-address_user			VARCHAR(255) NOT NULL
+	-phone					VARCHAR(255) NOT NULL
+	-id_type				INT NOT NULL
+
+ORDERS:
+	-id_order				INT NOT NULL autoincrement (PK)
+	-state					VARCHAR(255) NOT NULL		
+	-id_user				INT NOT NULL (FK -> USERS.id_user)
+	-address_order			VARCHAR(255) NOT NULL
+	-precio_total			DECIMAL(6,2) NOT NULL
+	-fecha_hora				DATETIME
+	-id_restaurant			INT NOT NULL (FK -> RESTAURANT.id_rest)
+
+RESTAURANT
+	-id_rest				INT NOT NULL autoincrement (PK)		
+	-name_rest				VARCHAR(255) NOT NULL
+	-address_rest			VARCHAR(255) NOT NULL
+	-phone_rest				VARCHAR(255) NOT NULL
+	-typ_rest				INT NOT NULL	
+
+ADMIN_REST
+	-id_rest				INT NOT NULL (FK -> RESTAURANT.id_rest)
+	-id_user_admin			INT NOT NULL (FK -> USER.id_user)
+
+PLATOS
+	-id_plato				INT NOT NULL autoincrement (PK)
+	-precio					INT NOT NULL
+	-id_rest				INT NOT NULL (FK -> RESTAURANT.id_rest)
+	-img					BLOB
+	-descripcion			VARCHAR(255) NOT NULL
+
+
+ORDERPLATOS	
+	-id_order				INT NOT NULL (FK -> ORDER.id_order)		
+	-id_plato				INT NOT NULL (FK -> PLATOS.id_plato)
+	
+		
+	
