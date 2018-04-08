@@ -8,8 +8,8 @@ public class Restaurant{
 	private String phone_rest;
 	private String typ_rest;
 
-	public String getIdRest(){
-		return id_rest;
+	public int getIdRest(){
+		return this.id_rest;
 	}
 
 	public void setIdRest(int id_rest){
