@@ -157,6 +157,75 @@ public class DBManager implements AutoCloseable {
         }
 
         return orderlist;
-      }
+    }
+
+    public ArrayList<Order> searchOrdersRest(int id_rest) throws SQLException{
+
+        ArrayList<Order> orderlist = new ArrayList<Order> ();
+
+        String query = "SELECT * FROM Orders INNER JOIN Restaurants ON Orders.id_rest = Restaurants.id_rest WHERE Restaurants.id_rest = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_rest);
+            ResultSet rs = st.executeQuery();
+            
+           
+            while(rs.next()){
+
+                Order order = new Order();
+                order.setIdOrder(rs.getInt("id_order"));
+                order.setState(rs.getString("state"));
+                order.setIdUser(rs.getInt("id_user"));
+                order.setCiudad(rs.getString("ciudad"));
+                order.setAddressOrder(rs.getString("address_order"));
+                order.setPrecioTotal(rs.getFloat("precio_total"));
+                order.setFechaHora(rs.getTimestamp("fecha_hora"));
+                order.setIdRest(rs.getInt("id_rest"));
+                
+                orderlist.add(order);
+
+                System.out.println(order.getIdOrder());
+               
+          
+            }
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        return orderlist;
+    }
+    
+    public ArrayList<Restaurant> searchRestofAdmin(int id_user){
+
+        ArrayList<Restaurant> restaurantlist = new ArrayList<Restaurant>();
+
+        String query = "SELECT * FROM Restaurants INNER JOIN AdminRest ON Restaurants.id_rest = AdminRest.id_rest INNER JOIN Users ON AdminRest.id_user_admin = Users.id_user WHERE Users.id_user = ?"
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_user);
+            ResultSet rs = st.executeQuery();
+            
+           
+            while(rs.next()){
+
+                Restaurant restaurant = new Restaurant();
+                restaurant.setIdRest(rs.getInt("id_rest"));
+                restaurant.setNameRest(rs.getString("name_rest"));
+                restaurant.setAddressRest(rs.getString("address_rest"));
+                restaurant.setCiudad(rs.getString("ciudad"));
+                restaurant.setPhoneRest(rs.getString("phone_rest"));
+                restaurant.setTypeRest(rs.getInt("typ_rest"));
+                
+                restaurantlist.add(restaurant);
+                        
+            }
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        return restaurantlist;
+    }
 
 }

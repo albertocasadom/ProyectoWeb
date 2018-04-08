@@ -16,11 +16,11 @@ public class Restaurant{
 		this.id_rest = id_rest;
 	}
 
-	public String getName(){
+	public String getNameRest(){
 		return this.name;
 	}
 
-	public void setName(String name){
+	public void setNameRest(String name){
 		this.name = name;
 	}
 

@@ -39,10 +39,12 @@ public class ViewUser extends HttpServlet {
 
 		}else{
 
-            if(session.getAttribute("restaurants") == null){
+           /* if(session.getAttribute("restaurants") == null){
                 ArrayList<Restaurant> restaurants = new ArrayList<Restaurant> ();
                 session.setAttribute("restaurants", restaurants);
-            }
+            }*/
+
+            
 
             RequestDispatcher rd = request.getRequestDispatcher("ViewAdmin.jsp");
             rd.forward(request, response);
