@@ -12,3 +12,7 @@ git init
 
 git pull
 
+
+Deshacer commit:
+
+git reset --hard HEAD~1
