@@ -519,3 +519,6 @@
 0:0:0:0:0:0:0:1 - - [09/Apr/2018:16:48:30 +0200] "GET /proyecto/rest?id=1 HTTP/1.1" 200 448
 0:0:0:0:0:0:0:1 - - [09/Apr/2018:16:48:47 +0200] "GET /proyecto/rest?id=1 HTTP/1.1" 200 448
 0:0:0:0:0:0:0:1 - - [09/Apr/2018:16:48:57 +0200] "GET /proyecto/rest?id=2 HTTP/1.1" 200 474
+0:0:0:0:0:0:0:1 - - [09/Apr/2018:17:06:42 +0200] "GET /proyecto/check?login=pepegrillo%40gmail.com&pass=pepe&init=Iniciar+Sesi%C3%B3n+ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [09/Apr/2018:17:06:42 +0200] "GET /proyecto/init HTTP/1.1" 200 1299
+0:0:0:0:0:0:0:1 - - [09/Apr/2018:17:06:47 +0200] "GET /proyecto/search?rest=Leganes&search=Buscar HTTP/1.1" 200 454

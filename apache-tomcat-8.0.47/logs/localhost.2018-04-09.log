@@ -4462,3 +4462,7 @@ Stacktrace:
 	at java.lang.Thread.run(Thread.java:748)
 
 09-Apr-2018 16:50:29.893 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doReadObject Cannot deserialize session attribute restaurants for session 918366F0FB94B92A4593030303DC830D
+09-Apr-2018 17:06:28.214 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+09-Apr-2018 17:06:28.214 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+09-Apr-2018 17:06:29.903 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+09-Apr-2018 17:06:29.903 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()

@@ -260,4 +260,35 @@ public class DBManager implements AutoCloseable {
         return cart;
     }
 
+    public ArrayList<Restaurant> searchResults(String ciudad){
+
+        ArrayList<Restaurant> foundrestaurants = new ArrayList<Restaurant>();
+
+        String query = "SELECT * FROM Restaurants WHERE Restaurants.ciudad = ? ";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setString(1, ciudad);
+            ResultSet rs = st.executeQuery();
+            
+            while(rs.next()){
+
+                Restaurant restaurant = new Restaurant();
+                restaurant.setIdRest(rs.getInt("id_rest"));
+                restaurant.setNameRest(rs.getString("name_rest"));
+                restaurant.setAddressRest(rs.getString("address_rest"));
+                restaurant.setCiudad(rs.getString("ciudad"));
+                restaurant.setPhoneRest(rs.getString("phone_rest"));
+                restaurant.setTypeRest(rs.getString("typ_rest"));
+                
+                foundrestaurants.add(restaurant);
+                        
+            }
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        return foundrestaurants;
+    }
+
 }
