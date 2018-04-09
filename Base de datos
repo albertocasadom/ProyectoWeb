@@ -34,6 +34,7 @@ ADMIN_REST
 
 PLATOS
 	-id_plato				INT NOT NULL autoincrement (PK)
+	-nameplate				VARCHAR (255) NOT NULL
 	-precio					INT NOT NULL
 	-id_rest				INT NOT NULL (FK -> RESTAURANT.id_rest)
 	-img					BLOB

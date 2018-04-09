@@ -23,7 +23,7 @@ CREATE TABLE AdminRest(id_rest INT NOT NULL, id_user_admin INT NOT NULL, CONSTRA
 
 // TABLA PLATOS
 
-CREATE TABLE Platos(id_plato INT NOT NULL auto_increment, precio DECIMAL(6,2) NOT NULL, id_rest INT NOT NULL, img BLOB NULL, descripcion VARCHAR(255) NULL, CONSTRAINT FOREIGN KEY (id_rest) REFERENCES Restaurants(id_rest), PRIMARY KEY(id_plato))ENGINE=INNODB; 
+CREATE TABLE Platos(id_plato INT NOT NULL auto_increment, nameplate VARCHAR(255) NOT NULL, precio DECIMAL(6,2) NOT NULL, id_rest INT NOT NULL, img BLOB NULL, descripcion VARCHAR(255) NULL, CONSTRAINT FOREIGN KEY (id_rest) REFERENCES Restaurants(id_rest), PRIMARY KEY(id_plato))ENGINE=INNODB; 
 
 //TABLA ORDERPLATOS
 
@@ -44,6 +44,11 @@ INSERT INTO Orders (Orders.state, Orders.id_user, Orders.ciudad, Orders.address_
 // AÑADIR RESTAURANTE
 
 INSERT INTO Restaurants VALUES(1,'Telepizza','C/pizza N314', 'Leganes', '669666666', 'ff');
+
+// AÑADIR PLATO 
+
+INSERT INTO Platos (Platos.precio, Platos.id_rest, Platos.descripcion) VALUES (5.75,1, "Esto es un plato de prueba");
+
 
 
 

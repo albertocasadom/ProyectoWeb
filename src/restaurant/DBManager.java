@@ -196,7 +196,7 @@ public class DBManager implements AutoCloseable {
         return orderlist;
     }
     
-    public ArrayList<Restaurant> searchRestsofAdmin(int id_user){
+    public ArrayList<Restaurant> searchRestsofAdmin(int id_user)throws SQLException{
 
         ArrayList<Restaurant> restaurantlist = new ArrayList<Restaurant>();
 
@@ -226,6 +226,38 @@ public class DBManager implements AutoCloseable {
         }
 
         return restaurantlist;
+    }
+
+    public ArrayList<Plato> searchCart(int id_rest) throws SQLException{
+
+        ArrayList<Plato> cart = new ArrayList<Plato>();
+
+        String query = "SELECT * FROM Platos INNER JOIN Restaurants ON Platos.id_rest = Restaurants.id_rest WHERE Restaurants.id_rest = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_rest);
+            ResultSet rs = st.executeQuery();
+            
+           
+            while(rs.next()){
+
+                Plato plate = new Plato();
+                plate.setIdPlato(rs.getInt("id_plato"));
+                plate.setNamePlate(rs.getString("nameplate"));
+                plate.setPrecio(rs.getFloat("precio"));
+                plate.setIdRest(rs.getInt("id_rest"));
+                //faltaria añadir imagen para completar el objeto java. consultar como se hace.
+                plate.setDescripcion(rs.getString("descripcion"));
+                
+                cart.add(plate);
+                        
+            }
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        return cart;
     }
 
 }

@@ -4,6 +4,7 @@ import java.io.*;
 
 public class Plato{
 	private int id_plato;
+	private String nameplate;
 	private float precio;
 	private int id_rest;
 	private File img;
@@ -16,7 +17,13 @@ public class Plato{
 	public void setIdPlato(int id_plato){
 		this.id_plato = id_plato;
 	}
+	public String getNamePlate(){
+		return this.nameplate;
+	}
 
+	public void setNamePlate(String nameplate){
+		this.nameplate = nameplate;
+	}
 	public float getPrecio(){
 		return this.precio;
 	}
