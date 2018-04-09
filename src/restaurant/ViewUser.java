@@ -44,10 +44,25 @@ public class ViewUser extends HttpServlet {
                 session.setAttribute("restaurants", restaurants);
             }*/
 
-            
+            try (DBManager manager = new DBManager()) {  
+                ArrayList<Restaurant> restaurants = manager.searchRestsofAdmin(user.getId());
+                session.setAttribute("restaurants", restaurants);
+                ArrayList<ArrayList<Order>> ordersallrest = new ArrayList<ArrayList<Order>>();
 
-            RequestDispatcher rd = request.getRequestDispatcher("ViewAdmin.jsp");
-            rd.forward(request, response);
+                for(int i = 0; i< restaurants.size(); i++){
+
+                    ArrayList<Order> ordersrestaurant = manager.searchOrdersRest(restaurants.get(i).getIdRest());
+                    ordersallrest.add(ordersrestaurant);
+
+                }
+                session.setAttribute("ordersallrest", ordersallrest);
+                RequestDispatcher rd = request.getRequestDispatcher("ViewAdmin.jsp");
+                rd.forward(request, response);
+            }catch(SQLException | NamingException ex){
+
+                ex.printStackTrace();
+                response.sendError(500);
+            }
         }
 
     }

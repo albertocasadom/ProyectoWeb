@@ -168,7 +168,6 @@ public class DBManager implements AutoCloseable {
         try(PreparedStatement st = connection.prepareStatement(query)){
             st.setInt(1, id_rest);
             ResultSet rs = st.executeQuery();
-            
            
             while(rs.next()){
 
@@ -185,6 +184,7 @@ public class DBManager implements AutoCloseable {
                 orderlist.add(order);
 
                 System.out.println(order.getIdOrder());
+                System.out.println(order.getState());
                
           
             }
@@ -196,11 +196,11 @@ public class DBManager implements AutoCloseable {
         return orderlist;
     }
     
-    public ArrayList<Restaurant> searchRestofAdmin(int id_user){
+    public ArrayList<Restaurant> searchRestsofAdmin(int id_user){
 
         ArrayList<Restaurant> restaurantlist = new ArrayList<Restaurant>();
 
-        String query = "SELECT * FROM Restaurants INNER JOIN AdminRest ON Restaurants.id_rest = AdminRest.id_rest INNER JOIN Users ON AdminRest.id_user_admin = Users.id_user WHERE Users.id_user = ?"
+        String query = "SELECT * FROM Restaurants INNER JOIN AdminRest ON Restaurants.id_rest = AdminRest.id_rest INNER JOIN Users ON AdminRest.id_user_admin = Users.id_user WHERE Users.id_user = ?";
 
         try(PreparedStatement st = connection.prepareStatement(query)){
             st.setInt(1, id_user);
@@ -215,7 +215,7 @@ public class DBManager implements AutoCloseable {
                 restaurant.setAddressRest(rs.getString("address_rest"));
                 restaurant.setCiudad(rs.getString("ciudad"));
                 restaurant.setPhoneRest(rs.getString("phone_rest"));
-                restaurant.setTypeRest(rs.getInt("typ_rest"));
+                restaurant.setTypeRest(rs.getString("typ_rest"));
                 
                 restaurantlist.add(restaurant);
                         

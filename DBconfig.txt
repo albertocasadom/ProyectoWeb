@@ -37,5 +37,13 @@ INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.addr
 
 INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address_user, Users.ciudad_user, Users.phone, Users.id_type) VALUES ("Admin", "Ad Min", "admin@gmail.com", "admin","Lab sotano","Leganes", "717147137", 2);
 
+// AÑADIR PEDIDO
+
+INSERT INTO Orders (Orders.state, Orders.id_user, Orders.ciudad, Orders.address_order, Orders.precio_total, Orders.id_rest) VALUES('deliver', 3,'Leganes','C/pepe N12', 17.99, 1);
+
+// AÑADIR RESTAURANTE
+
+INSERT INTO Restaurants VALUES(1,'Telepizza','C/pizza N314', 'Leganes', '669666666', 'ff');
+
 
 

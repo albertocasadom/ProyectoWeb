@@ -18,9 +18,9 @@ ORDERS:
 	-address_order			VARCHAR(255) NOT NULL
 	-precio_total			DECIMAL(6,2) NOT NULL
 	-fecha_hora				TIMESTAMP
-	-id_rest			INT NOT NULL (FK -> RESTAURANT.id_rest)
+	-id_rest				INT NOT NULL (FK -> RESTAURANT.id_rest)
 
-RESTAURANT
+RESTAURANTS
 	-id_rest				INT NOT NULL autoincrement (PK)		
 	-name_rest				VARCHAR(255) NOT NULL
 	-address_rest			VARCHAR(255) NOT NULL

@@ -17,8 +17,6 @@
 				<input type = "submit" name = "search" value = "Buscar"> 
 			</div>	
 		</form>
-
-		<div>
 			<table>
 				<thead>
 					<tr>
