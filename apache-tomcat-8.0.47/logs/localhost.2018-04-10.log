@@ -3519,3 +3519,1647 @@ Stacktrace:] con causa raíz
 	at java.lang.Thread.run(Thread.java:748)
 
 10-Apr-2018 16:54:20.288 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doReadObject Cannot deserialize session attribute orders for session 8F5483F046A5B4405B8CBC6999025B19
+10-Apr-2018 16:55:07.694 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Apr-2018 16:55:07.694 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Apr-2018 18:00:29.394 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Apr-2018 18:00:29.394 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Apr-2018 18:00:31.700 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Apr-2018 18:00:31.700 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Apr-2018 18:00:33.556 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Apr-2018 18:00:33.557 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Apr-2018 18:01:46.965 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Apr-2018 18:01:46.965 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Apr-2018 18:01:48.870 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Apr-2018 18:01:48.870 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Apr-2018 18:05:11.736 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Apr-2018 18:05:11.736 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Apr-2018 18:05:11.799 ADVERTENCIA [localhost-startStop-2] org.apache.catalina.session.StandardSession.doWriteObject No puedo serializar atributo de sesión restaurants para sesión F0F8439AB45A93F4BFE25E271097EBDC
+ java.io.NotSerializableException: restaurant.Restaurant
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1715)
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1107)
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:315)
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:265)
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5533)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1424)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1413)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 18:05:11.802 ADVERTENCIA [localhost-startStop-2] org.apache.catalina.session.StandardSession.doWriteObject No puedo serializar atributo de sesión ordersallrest para sesión F0F8439AB45A93F4BFE25E271097EBDC
+ java.io.NotSerializableException: restaurant.Order
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1715)
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1107)
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:315)
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:265)
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5533)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1424)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1413)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 18:05:13.210 ADVERTENCIA [localhost-startStop-1] org.apache.catalina.session.StandardSession.doReadObject Cannot deserialize session attribute restaurants for session F0F8439AB45A93F4BFE25E271097EBDC
+10-Apr-2018 18:05:13.741 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Apr-2018 18:05:13.741 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Apr-2018 18:46:52.877 GRAVE [http-nio-9102-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet restaurant.ChangePrice lanzó excepción
+ java.lang.NullPointerException
+	at restaurant.ChangePrice.doGet(ChangePrice.java:28)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1539)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1495)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:02:20.664 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doWriteObject No puedo serializar atributo de sesión restaurants para sesión 29B095907B316147145C54005C2DF122
+ java.io.NotSerializableException: restaurant.Restaurant
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1715)
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1107)
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:315)
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:265)
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5533)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3862)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:291)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5671)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:02:20.667 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doWriteObject No puedo serializar atributo de sesión ordersallrest para sesión 29B095907B316147145C54005C2DF122
+ java.io.NotSerializableException: restaurant.Order
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1715)
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1107)
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:315)
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:265)
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5533)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3862)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:291)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5671)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:02:20.668 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doWriteObject No puedo serializar atributo de sesión orders para sesión 29B095907B316147145C54005C2DF122
+ java.io.NotSerializableException: restaurant.Order
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1715)
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1107)
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:315)
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:265)
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5533)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3862)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:291)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5671)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:02:20.789 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doReadObject Cannot deserialize session attribute restaurants for session 29B095907B316147145C54005C2DF122
+10-Apr-2018 19:02:59.586 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Apr-2018 19:02:59.586 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Apr-2018 19:03:01.411 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Apr-2018 19:03:01.411 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Apr-2018 19:03:27.159 GRAVE [http-nio-9102-exec-1] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet jsp lanzó una excepción
+ org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+h2 cannot be resolved to a type
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+CARTA cannot be resolved
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+table cannot be resolved to a type
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+thead cannot be resolved to a type
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+tr cannot be resolved to a type
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Descripción cannot be resolved
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on tokens, delete these tokens
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 23 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on tokens, delete these tokens
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+24: 					<% for(int i = 0; i< cart.size(); i++){ %>
+25: 					<tr>
+26: 						<td> <%= cart.get(i).getNamePlate() %> </td>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:198)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:457)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:363)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:338)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:363)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:716)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:466)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at restaurant.ViewRestaurant.doGet(ViewRestaurant.java:54)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1539)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1495)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:03:27.159 GRAVE [http-nio-9102-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [restaurant.ViewRestaurant] en el contexto con ruta [/proyecto] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+h2 cannot be resolved to a type
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+CARTA cannot be resolved
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+table cannot be resolved to a type
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+thead cannot be resolved to a type
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+tr cannot be resolved to a type
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Descripción cannot be resolved
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on tokens, delete these tokens
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 23 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on tokens, delete these tokens
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+24: 					<% for(int i = 0; i< cart.size(); i++){ %>
+25: 					<tr>
+26: 						<td> <%= cart.get(i).getNamePlate() %> </td>
+
+
+Stacktrace:] con causa raíz
+ org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+h2 cannot be resolved to a type
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+CARTA cannot be resolved
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 14 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+11: 	<body>
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+table cannot be resolved to a type
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 15 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+12: 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+thead cannot be resolved to a type
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 16 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+13: 		<% User user = (User) session.getAttribute("user");
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+tr cannot be resolved to a type
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 17 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+14: 			<h2> CARTA </h2>
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 18 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+15: 			<table>
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Descripción cannot be resolved
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 19 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+16: 				<thead>
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+th cannot be resolved to a type
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error, insert "super ( ) ;" to complete Statement
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Constructor call must be the first statement in a constructor
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on tokens, delete these tokens
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 20 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on token "/", delete this token
+17: 					<tr>
+18: 						<th> Plato </th>
+19: 						<th> Descripción</th>
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+
+
+Ha tenido lugar un error en la línea: 23 en el archivo jsp: /ViewRestaurant.jsp
+Syntax error on tokens, delete these tokens
+20: 						<th> Precio </th>
+21: 					</tr>
+22: 				</thead>
+23: 				<tbody>
+24: 					<% for(int i = 0; i< cart.size(); i++){ %>
+25: 					<tr>
+26: 						<td> <%= cart.get(i).getNamePlate() %> </td>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:198)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:457)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:363)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:338)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:363)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:716)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:466)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at restaurant.ViewRestaurant.doGet(ViewRestaurant.java:54)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1539)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1495)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:04:50.916 GRAVE [http-nio-9102-exec-2] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet jsp lanzó una excepción
+ org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: 30 en el archivo jsp: /ViewRestaurant.jsp
+getIdType cannot be resolved or is not a field
+27: 						<td> <%= cart.get(i).getDescripcion() %> </td>
+28: 						<td> <%= cart.get(i).getPrecio() %> € </td>
+29: 						<td>
+30: 						<% if(user.getIdType == 2){ %>
+31: 						<form action = "changeprice">
+32: 							<input type = "number" name = "newprice" min = "0" max = "9999.99" step ="0.01" required>
+33: 							<input type="submit" name = "changeprice" value = "Modificar Precio">
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:198)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:457)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:363)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:338)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:363)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:716)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:466)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at restaurant.ViewRestaurant.doGet(ViewRestaurant.java:54)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1539)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1495)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:04:50.916 GRAVE [http-nio-9102-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [restaurant.ViewRestaurant] en el contexto con ruta [/proyecto] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: 30 en el archivo jsp: /ViewRestaurant.jsp
+getIdType cannot be resolved or is not a field
+27: 						<td> <%= cart.get(i).getDescripcion() %> </td>
+28: 						<td> <%= cart.get(i).getPrecio() %> € </td>
+29: 						<td>
+30: 						<% if(user.getIdType == 2){ %>
+31: 						<form action = "changeprice">
+32: 							<input type = "number" name = "newprice" min = "0" max = "9999.99" step ="0.01" required>
+33: 							<input type="submit" name = "changeprice" value = "Modificar Precio">
+
+
+Stacktrace:] con causa raíz
+ org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: 30 en el archivo jsp: /ViewRestaurant.jsp
+getIdType cannot be resolved or is not a field
+27: 						<td> <%= cart.get(i).getDescripcion() %> </td>
+28: 						<td> <%= cart.get(i).getPrecio() %> € </td>
+29: 						<td>
+30: 						<% if(user.getIdType == 2){ %>
+31: 						<form action = "changeprice">
+32: 							<input type = "number" name = "newprice" min = "0" max = "9999.99" step ="0.01" required>
+33: 							<input type="submit" name = "changeprice" value = "Modificar Precio">
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:198)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:457)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:363)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:338)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:363)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:716)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:466)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at restaurant.ViewRestaurant.doGet(ViewRestaurant.java:54)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1539)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1495)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:31:45.171 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doWriteObject No puedo serializar atributo de sesión orders para sesión A2DF24DE4685CB6875F5E8FDFECF3EF1
+ java.io.NotSerializableException: restaurant.Order
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1715)
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1107)
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:315)
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:265)
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5533)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3862)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:291)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5671)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)
+	at java.lang.Thread.run(Thread.java:748)
+
+10-Apr-2018 19:31:45.304 ADVERTENCIA [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.StandardSession.doReadObject Cannot deserialize session attribute orders for session A2DF24DE4685CB6875F5E8FDFECF3EF1
+10-Apr-2018 19:32:00.958 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Apr-2018 19:32:00.958 INFORMACIÓN [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Apr-2018 19:32:02.924 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Apr-2018 19:32:02.924 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()

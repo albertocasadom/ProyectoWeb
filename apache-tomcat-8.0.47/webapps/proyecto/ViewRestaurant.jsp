@@ -10,6 +10,8 @@
 	</head>
 	<body>
 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
+		<% User user = (User) session.getAttribute("user"); %>
+		<% String id_rest_str = request.getAttribute("id"); %>
 			<h2> CARTA </h2>
 			<table>
 				<thead>
@@ -26,6 +28,7 @@
 						<td> <%= cart.get(i).getDescripcion() %> </td>
 						<td> <%= cart.get(i).getPrecio() %> € </td>
 						<td>
+						<% if(user.getIdType() == 2){ %>
 						<form action = "changeprice">
 							<input type = "number" name = "newprice" min = "0" max = "9999.99" step ="0.01" required>
 							<input type="submit" name = "changeprice" value = "Modificar Precio">
@@ -33,14 +36,16 @@
 						</form>
 						</td>
 						<td>
-						<form action = "addplate">
-							<input type="submit" name = "addplate" value = "Añadir plato">
+						<form action = "AddPlate.jsp">
+							<input type = "hidden" name = "idrest" value = "<%=id_rest_str%>">
+							<input type="submit" name = "addplate" value = "Añadir plato" >
 						</form>
 						</td>
 						<td>
 						<form action = "deleteplate">
 							<input type="submit" name = "deleteplate" value = "Eliminar plato">
 						</form>
+						<%}%>
 					</td>
 					</tr>
 

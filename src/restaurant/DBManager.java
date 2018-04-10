@@ -85,7 +85,7 @@ public class DBManager implements AutoCloseable {
         connection.setTransactionIsolation(Connection. TRANSACTION_REPEATABLE_READ);
         connection.setAutoCommit(false);
 
-        if(checkuser.getMail() == null){
+        if(checkuser == null){
 
             String query = "INSERT INTO Users (Users.name, Users.surname, Users.mail, Users.pass, Users.address_user, Users.ciudad_user, Users.phone, Users.id_type) VALUES ( ?, ?, ?, ? ,? , ?, ?, 1)";
             try(PreparedStatement st = connection.prepareStatement(query)){
@@ -397,9 +397,68 @@ public class DBManager implements AutoCloseable {
         }
 
         return istrue;
-    } 
+    }
 
+    public Plato searchPlato(String nameplate) throws SQLException {
+        
+        String query = "SELECT * FROM Platos WHERE nameplat = ?";
+        Plato plato = null;
 
+        try(PreparedStatement st = connection.prepareStatement(query)){
+
+            st.setString(1, nameplate);
+            ResultSet rs = st.executeQuery();
+          
+            if(rs.next()){
+                plato = new Plato();
+                plato.setIdPlato(rs.getInt("id_plato"));
+                plato.setNamePlate(rs.getString("nameplate"));
+                plato.setPrecio(rs.getFloat("precio"));
+                plato.setIdRest(rs.getInt("id_rest"));
+                plato.setDescripcion(rs.getString("descripcion"));
+                System.out.println("Plato encontrado");
+                   
+            }else{
+                System.out.println("No existe el plato");
+            
+            }
+
+        }
+        return plato;
+    }
+
+    public boolean insertPlate(String nameplate, Float precio, int id_rest, String descripcion) throws SQLException{
+
+        Plato plato = new Plato();
+        boolean success = false;
+        connection.setTransactionIsolation(Connection. TRANSACTION_REPEATABLE_READ);
+        connection.setAutoCommit(false);
+
+        plato = searchPlato(nameplate);
+
+        if(plato == null){
+            String query = "INSERT INTO Platos (Platos.nameplate, Platos.precio, Platos.id_rest, Platos.descripcion) VALUES (?, ?, ?, ?)";
+            try(PreparedStatement st = connection.prepareStatement(query)){
+                st.setString(1, nameplate);
+                st.setFloat(2, precio);
+                st.setInt(3, id_rest);
+                st.setString(4,descripcion);        
+                st.executeUpdate();
+
+                success = true;
+            
+            }
+        }    
+
+        if(success){
+            connection.commit();
+
+        }else{
+            connection.rollback();
+        }
+
+        connection.setAutoCommit(true);
+        return success;
     }
 
 }

@@ -21,7 +21,7 @@
 				<tbody>
 					<% for(int i = 0; i< foundrestaurants.size(); i++){ %>
 					<tr>
-						<td> <%= foundrestaurants.get(i).getNameRest() %> </td>
+						<td><a href = "rest?id=<%=foundrestaurants.get(i).getIdRest()%>"> <%= foundrestaurants.get(i).getNameRest() %></td>
 						<td> <%= foundrestaurants.get(i).getAddressRest() %> </td>
 					</tr>
 					<% } %>
