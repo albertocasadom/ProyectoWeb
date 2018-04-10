@@ -381,4 +381,25 @@ public class DBManager implements AutoCloseable {
         return restaurant;
     } 
 
+    public boolean isAdminOfRest(int id_user, int id_rest) throws SQLException{
+
+        boolean istrue = false;
+        String query = "SELECT * FROM Users INNER JOIN AdminRest ON Users.id_user = AdminRest.id_user_admin INNER JOIN Restaurants ON Restaurants.id_rest = AdminRest.id_rest WHERE Users.id_user = ? AND Restaurants.id_rest = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_user);
+            st.setInt(2, id_rest);
+            ResultSet rs = st.executeQuery();
+                   
+            if(rs.next()){
+                istrue = true;                       
+            }
+        }
+
+        return istrue;
+    } 
+
+
+    }
+
 }

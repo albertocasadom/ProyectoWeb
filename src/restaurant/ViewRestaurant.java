@@ -26,11 +26,17 @@ public class ViewRestaurant extends HttpServlet {
                 System.out.println(request.getParameter("id"));
                 String id_rest_str = request.getParameter("id");
                 int id_rest = Integer.parseInt(id_rest_str);
-                ArrayList<Plato> cart = manager.searchCart(id_rest);
-                request.setAttribute("cart", cart);
-                RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurant.jsp");
-                rd.forward(request, response);
+                boolean isadminrest = manager.isAdminOfRest(user.getId(), id_rest);
 
+                if(isadminrest){
+                    ArrayList<Plato> cart = manager.searchCart(id_rest);
+                    request.setAttribute("cart", cart);
+                    RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurant.jsp");
+                    rd.forward(request, response);
+                }else{
+
+                    response.sendError(500);
+                }
             }catch(SQLException | NamingException ex){
 
                     ex.printStackTrace();
