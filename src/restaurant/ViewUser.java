@@ -39,11 +39,6 @@ public class ViewUser extends HttpServlet {
 
 		}else{
 
-           /* if(session.getAttribute("restaurants") == null){
-                ArrayList<Restaurant> restaurants = new ArrayList<Restaurant> ();
-                session.setAttribute("restaurants", restaurants);
-            }*/
-
             try (DBManager manager = new DBManager()) {  
                 ArrayList<Restaurant> restaurants = manager.searchRestsofAdmin(user.getId());
                 session.setAttribute("restaurants", restaurants);

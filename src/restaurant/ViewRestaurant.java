@@ -19,21 +19,26 @@ public class ViewRestaurant extends HttpServlet {
     {
 
         HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
 
-        try (DBManager manager = new DBManager()) {
+        if(user != null && user.getIdType() == 2){   // HAY QUE MIRAR QUE EL ADMINISTRADOR LO SEA DEL RESTAURANTE AL QUE QUIERE ACCEDER.
+            try (DBManager manager = new DBManager()) {
+                System.out.println(request.getParameter("id"));
+                String id_rest_str = request.getParameter("id");
+                int id_rest = Integer.parseInt(id_rest_str);
+                ArrayList<Plato> cart = manager.searchCart(id_rest);
+                request.setAttribute("cart", cart);
+                RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurant.jsp");
+                rd.forward(request, response);
 
-            String id_rest_str = request.getParameter("id");
-            int id_rest = Integer.parseInt(id_rest_str);
-            ArrayList<Plato> cart = manager.searchCart(id_rest);
-            request.setAttribute("cart", cart);
-            RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurant.jsp");
-            rd.forward(request, response);
+            }catch(SQLException | NamingException ex){
 
-        }catch(SQLException | NamingException ex){
+                    ex.printStackTrace();
+                    response.sendError(500);
+            }
+        }else{
 
-                ex.printStackTrace();
-                response.sendError(500);
+            response.sendError(500);
         }
-
     }
 }

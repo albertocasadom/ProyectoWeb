@@ -45,7 +45,7 @@ public class DBManager implements AutoCloseable {
     public User searchUser(String mail, String pass) throws SQLException {
         
         String query = "SELECT * FROM Users WHERE mail = ? AND pass = ?";
-        User user = new User();
+        User user = null;
 
         try(PreparedStatement st = connection.prepareStatement(query)){
 
@@ -54,6 +54,7 @@ public class DBManager implements AutoCloseable {
             ResultSet rs = st.executeQuery();
           
             if(rs.next()){
+                user = new User();
                 user.setName(rs.getString("name"));
                 user.setSurname(rs.getString("surname"));
                 user.setMail(rs.getString("mail"));
@@ -70,8 +71,6 @@ public class DBManager implements AutoCloseable {
             
             }
 
-        }catch(Exception e){
-            System.out.println(e);
         }
         return user;
       
@@ -323,6 +322,63 @@ public class DBManager implements AutoCloseable {
         return success;
 
 
-    }   
+    }  
+
+       public boolean changePrice(int idPlato, Float newprice) throws SQLException{
+        boolean success = false;
+
+        connection.setTransactionIsolation(Connection. TRANSACTION_REPEATABLE_READ);
+        connection.setAutoCommit(false);
+
+        String query = "UPDATE Platos SET precio = ?  WHERE Platos.id_plato = ?";
+        try(PreparedStatement st = connection.prepareStatement(query)){
+
+            st.setFloat(1, newprice);
+            st.setInt(2, idPlato);
+            System.out.println("Consulta correcta");
+            st.executeUpdate();
+            success = true;
+
+        }
+          
+        if(success){
+
+            connection.commit();
+
+        }else{
+
+            connection.rollback();
+
+        }
+
+        connection.setAutoCommit(true);
+        return success;
+    }  
+
+        public Restaurant searchRestByPlate(int id_plato) throws SQLException{
+
+        Restaurant restaurant = null;
+        String query = "SELECT * FROM Restaurants INNER JOIN Platos ON Platos.id_rest = Restaurants.id_rest WHERE Platos.id_plato = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_plato);
+            ResultSet rs = st.executeQuery();
+            
+           
+            if(rs.next()){
+                restaurant = new Restaurant();
+                restaurant.setIdRest(rs.getInt("id_rest"));
+                restaurant.setNameRest(rs.getString("name_rest"));
+                restaurant.setAddressRest(rs.getString("address_rest"));
+                restaurant.setCiudad(rs.getString("ciudad"));
+                restaurant.setPhoneRest(rs.getString("phone_rest"));
+                restaurant.setTypeRest(rs.getString("typ_rest"));
+                       
+            }
+
+        }
+
+        return restaurant;
+    } 
 
 }

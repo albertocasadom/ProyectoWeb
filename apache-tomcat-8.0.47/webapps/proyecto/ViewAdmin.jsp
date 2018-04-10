@@ -58,7 +58,7 @@
 
 		<ul> Lista de Restaurantes
 			<% for(int x = 0; x<restaurantslist.size();x++) { %>
-				<li> <a href = "/proyecto/rest?id=<%=restaurantslist.get(x).getIdRest()%>"> <%= restaurantslist.get(x).getNameRest() %> , <%= restaurantslist.get(x).getAddressRest() %> </a></li>
+				<li> <a href = "rest?id=<%=restaurantslist.get(x).getIdRest()%>"> <%= restaurantslist.get(x).getNameRest() %> , <%= restaurantslist.get(x).getAddressRest() %> </a></li>
 			<% } %>
 		</ul>
 	</body>

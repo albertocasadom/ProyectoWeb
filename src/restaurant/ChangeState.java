@@ -29,8 +29,10 @@ public class ChangeState extends HttpServlet {
             int idorder = Integer.parseInt(idorderstr[0]);
             boolean changestate = manager.changeState(idorder, state);
 
-            response.sendRedirect("init");
-   
+            if(changestate){
+                response.sendRedirect("init");
+            }
+            
         }catch(SQLException | NamingException ex){
 
                 ex.printStackTrace();

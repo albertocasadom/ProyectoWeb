@@ -28,7 +28,7 @@ public class InitSession extends HttpServlet {
             String userpass = request.getParameter("pass");
             User user = manager.searchUser(mail, userpass);
 
-            if(user.getMail() != null){
+            if(user != null){
                     session.setAttribute("user",user);
                     response.sendRedirect("init");
                 

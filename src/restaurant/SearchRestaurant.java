@@ -19,20 +19,25 @@ public class SearchRestaurant extends HttpServlet {
     {
 
         HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
 
-        try (DBManager manager = new DBManager()) {
+        if(user != null){
+            try (DBManager manager = new DBManager()) {
 
-            String ciudad = request.getParameter("rest");
-            ArrayList<Restaurant> foundrestaurants = manager.searchResults(ciudad);
-            request.setAttribute("foundrestaurants", foundrestaurants);
-            RequestDispatcher rd = request.getRequestDispatcher("ViewResults.jsp");
-            rd.forward(request, response);
+                String ciudad = request.getParameter("rest");
+                ArrayList<Restaurant> foundrestaurants = manager.searchResults(ciudad);
+                request.setAttribute("foundrestaurants", foundrestaurants);
+                RequestDispatcher rd = request.getRequestDispatcher("ViewResults.jsp");
+                rd.forward(request, response);
 
-        }catch(SQLException | NamingException ex){
+            }catch(SQLException | NamingException ex){
 
-                ex.printStackTrace();
-                response.sendError(500);
+                    ex.printStackTrace();
+                    response.sendError(500);
+            }
+        }else{
+
+            response.sendError(500);
         }
-
     }
 }
