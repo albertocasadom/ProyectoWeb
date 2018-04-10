@@ -23,7 +23,7 @@
 					<thead>
 						<tr>
 							<th> Pedido </th>
-							<th> Fecha y Hora </th>
+							<th> Fecha y Hora última actualización </th>
 							<th> Estado </th>
 							<th> Total </th>
 							<th>	</th>
@@ -36,14 +36,24 @@
 								<td> <%= ordersallrest.get(i).get(j).getFechaHora() %> </td>
 								<td> <%= ordersallrest.get(i).get(j).getState() %> </td>
 								<td> <%= ordersallrest.get(i).get(j).getPrecioTotal() %> € </td>		
-								<td> <input type = "submit" name = "edit" value = "Editar Pedido" id = "<%=ordersallrest.get(i).get(j).getIdOrder()%>"> </td>
+								<td> 
+								<form action = "changestate">
+								 	<label for = "unittype"> Cambiar estado a: </label> 
+									 <select id"idstate" name = "state" >
+									 	<option value = "term" name = "term">terminated </option>
+									 	<option value = "ready" name = "ready">ready</option> 
+									 	<option value = "deliver" name= "deliver">on deliver</option> 
+									 	<option value = "inprogress" name = "inprogress">in progress</option> 
+
+									 <input type = "hidden" name = "idorder" value = "<%=ordersallrest.get(i).get(j).getIdOrder()%>">
+									 <input type = "submit" name = "edit" value = "Editar Pedido"> </td>
+								</form>	 	
+									
+
 							</tr>
 						<% } %>
 					</tbody>
 				</table>
-				<input type = "submit" name = "add" value = "Añadir plato">
-				<input type = "submit" name = "delete" value = "Eliminar plato">
-				<input type = "submit" name = "change" value = "Modificar precio">
 		<% } %>
 
 		<ul> Lista de Restaurantes

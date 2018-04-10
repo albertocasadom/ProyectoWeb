@@ -260,7 +260,7 @@ public class DBManager implements AutoCloseable {
         return cart;
     }
 
-    public ArrayList<Restaurant> searchResults(String ciudad){
+    public ArrayList<Restaurant> searchResults(String ciudad) throws SQLException{
 
         ArrayList<Restaurant> foundrestaurants = new ArrayList<Restaurant>();
 
@@ -290,5 +290,39 @@ public class DBManager implements AutoCloseable {
 
         return foundrestaurants;
     }
+
+    public boolean changeState(int idOrder, String state) throws SQLException{
+        boolean success = false;
+
+        connection.setTransactionIsolation(Connection. TRANSACTION_REPEATABLE_READ);
+        connection.setAutoCommit(false);
+
+        String query = "UPDATE Orders SET state = ? WHERE Orders.id_order = ?";
+        try(PreparedStatement st = connection.prepareStatement(query)){
+
+            st.setString(1, state);
+            st.setInt(2, idOrder);
+            st.executeUpdate();
+            success = true;
+
+        }catch(Exception e){
+                System.out.println(e);  
+        }
+          
+        if(success){
+
+            connection.commit();
+
+        }else{
+
+            connection.rollback();
+
+        }
+
+        connection.setAutoCommit(true);
+        return success;
+
+
+    }   
 
 }
