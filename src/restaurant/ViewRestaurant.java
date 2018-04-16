@@ -51,7 +51,7 @@ public class ViewRestaurant extends HttpServlet {
                 int id_rest = Integer.parseInt(id_rest_str);
                 ArrayList<Plato> cart = manager.searchCart(id_rest);
                 request.setAttribute("cart", cart);
-                RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurant.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurantUser.jsp");
                 rd.forward(request, response);
 
             }catch(SQLException | NamingException ex){
