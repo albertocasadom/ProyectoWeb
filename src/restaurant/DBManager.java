@@ -401,7 +401,7 @@ public class DBManager implements AutoCloseable {
 
     public Plato searchPlato(String nameplate) throws SQLException {
         
-        String query = "SELECT * FROM Platos WHERE nameplat = ?";
+        String query = "SELECT * FROM Platos WHERE nameplate = ?";
         Plato plato = null;
 
         try(PreparedStatement st = connection.prepareStatement(query)){
@@ -461,4 +461,55 @@ public class DBManager implements AutoCloseable {
         return success;
     }
 
+
+    public Restaurant searchRestByIdRest(int id_rest) throws SQLException{
+
+        Restaurant restaurant = null;
+        String query = "SELECT * FROM Restaurants WHERE id_rest=?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_rest);
+            ResultSet rs = st.executeQuery();
+            
+           
+            if(rs.next()){
+                restaurant = new Restaurant();
+                restaurant.setIdRest(rs.getInt("id_rest"));
+                restaurant.setNameRest(rs.getString("name_rest"));
+                restaurant.setAddressRest(rs.getString("address_rest"));
+                restaurant.setCiudad(rs.getString("ciudad"));
+                restaurant.setPhoneRest(rs.getString("phone_rest"));
+                restaurant.setTypeRest(rs.getString("typ_rest"));
+                       
+            }
+
+        }
+
+        return restaurant;
+    } 
+
+    public boolean deletePlate(int id_plate) throws SQLException{
+
+        boolean success = false;
+        connection.setTransactionIsolation(Connection. TRANSACTION_REPEATABLE_READ);
+        connection.setAutoCommit(false);
+
+            String query = "DELETE FROM Platos WHERE id_plato= ? ";
+            try(PreparedStatement st = connection.prepareStatement(query)){
+                st.setInt(1, id_plate);
+                success = true; 
+                st.executeUpdate();
+            }
+            
+        if(success){
+            connection.commit();
+
+        }else{
+            connection.rollback();
+        }
+
+        connection.setAutoCommit(true);
+        return success;
+
+    }
 }

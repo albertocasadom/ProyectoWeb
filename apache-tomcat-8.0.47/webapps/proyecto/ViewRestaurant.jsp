@@ -11,8 +11,12 @@
 	<body>
 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
 		<% User user = (User) session.getAttribute("user"); %>
-		<% String id_rest_str = request.getAttribute("id"); %>
+		<% String id_rest_str = (String) request.getAttribute("id"); %>
 			<h2> CARTA </h2>
+			<form action = "AddPlate.jsp">
+				<input type = "hidden" name = "idrest" value = "<%=id_rest_str%>">
+				<input type="submit" name = "addplate" value = "Añadir plato" >
+			</form>
 			<table>
 				<thead>
 					<tr>
@@ -36,14 +40,9 @@
 						</form>
 						</td>
 						<td>
-						<form action = "AddPlate.jsp">
-							<input type = "hidden" name = "idrest" value = "<%=id_rest_str%>">
-							<input type="submit" name = "addplate" value = "Añadir plato" >
-						</form>
-						</td>
-						<td>
 						<form action = "deleteplate">
 							<input type="submit" name = "deleteplate" value = "Eliminar plato">
+							<input type="hidden" name = "idplatodelete" value = "<%= cart.get(i).getIdPlato() %>">
 						</form>
 						<%}%>
 					</td>

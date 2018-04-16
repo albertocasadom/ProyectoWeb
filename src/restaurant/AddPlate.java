@@ -22,16 +22,19 @@ public class AddPlate extends HttpServlet {
 
         try (DBManager manager = new DBManager()) {
 
-            String idreststr [] = request.getAttribute("id");
-            String preciostr = request.getParameter("precio");            
-            float precio = Float.parseFloat(preciostr);
+            String idreststr[] = request.getParameterValues("idrest");
+            System.out.println(idreststr);
             int idrest = Integer.parseInt(idreststr[0]);
-            boolean changeprice = manager.changePrice(idplato, precio);
-            Restaurant restaurant = manager.searchRestByPlate(idplato);
+            String nameplate = request.getParameter("nameplate");
+            String precioplatestr = request.getParameter("precio");
+            float precioplate = Float.parseFloat(precioplatestr);
+            String descripcionplate = request.getParameter("descripcion");
+            Restaurant restaurant = manager.searchRestByIdRest(idrest);
+            boolean addplate = manager.insertPlate(nameplate, precioplate, idrest, descripcionplate);
             System.out.println(restaurant.getIdRest());
             
 
-            if(changeprice){
+            if(addplate){
                   response.sendRedirect("rest?id=" + restaurant.getIdRest());
             }
 

@@ -25,7 +25,7 @@ public class ViewRestaurant extends HttpServlet {
             try (DBManager manager = new DBManager()) {
                 System.out.println(request.getParameter("id"));
                 String id_rest_str = request.getParameter("id");
-                request.setParameter("id",id_rest_str);
+                request.setAttribute("id",id_rest_str);
                 int id_rest = Integer.parseInt(id_rest_str);
                 boolean isadminrest = manager.isAdminOfRest(user.getId(), id_rest);
 
