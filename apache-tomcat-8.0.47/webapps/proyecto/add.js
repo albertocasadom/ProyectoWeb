@@ -6,6 +6,7 @@
 
 		 }*/
 $(document).ready(function(){
+	 order = {};
 	 productos = {};
 	$(".boton").click(function(event){
 		 var id_but = document.getElementsByClassName('boton');
@@ -25,6 +26,18 @@ $(document).ready(function(){
 		if ((productos[id_clickedminus] === undefined) || (productos[id_clickedminus] === 0)) {productos[id_clickedminus] = 0;} else {productos[id_clickedminus] -= 1;}
 		 	console.log(productos);
 		 
+	});
+
+	$(".butform").click(function(event){
+		var dir = $("#str").val();
+		var city = $("#cit").val();
+		var tel = $("#tlf").val();
+
+		order = {dir, city, tel, productos};
+		console.log(order);
+
+		$.post("newOrder",order);
+
 	});
 
 });

@@ -1,0 +1,8 @@
+81.40.97.221 - - [18/Apr/2018:21:37:49 +0200] "GET /proyecto HTTP/1.1" 302 -
+81.40.97.221 - - [18/Apr/2018:21:37:49 +0200] "GET /proyecto/ HTTP/1.1" 200 825
+81.40.97.221 - - [18/Apr/2018:21:37:49 +0200] "GET /proyecto/init.css HTTP/1.1" 200 1406
+81.40.97.221 - - [18/Apr/2018:21:37:49 +0200] "GET /proyecto/mosaico1.jpg HTTP/1.1" 200 192377
+81.40.97.221 - - [18/Apr/2018:21:37:49 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+81.40.97.221 - - [18/Apr/2018:21:37:51 +0200] "GET /proyecto/createaccount.html?create=Reg%C3%ADstrate+ HTTP/1.1" 200 1448
+81.40.97.221 - - [18/Apr/2018:21:37:51 +0200] "GET /proyecto/registrate.css HTTP/1.1" 200 -
+81.40.97.221 - - [18/Apr/2018:21:38:39 +0200] "GET /proyecto/register?name=yvonne+&surname=del+val&nick=yv%40yv.com&nickrepeat=yv%40yv.com&newpass=yv&newpassrepeat=yv&address=asdfghjk&ciudad=Leganes&phone=56789&register=Reg%C3%ADstrame HTTP/1.1" 500 1052

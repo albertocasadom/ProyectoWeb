@@ -40,5 +40,25 @@
 					</tbody>
 				</table>
 			</form>
+
+
+		<h2> DIRECCIÓN DE ENTREGA </h2>
+		<form>
+			<div>
+				<label> Dirección:  </label>
+					<input type = "text" name = "street" id = "str" required>
+			</div>
+			<div>
+				<label> Ciudad: </label>
+					<input type = "text" name = "city" id = "cit" required>
+			</div>
+			<div>
+				<label> Número de telefono: </label>
+					<input type = "tel" name = "tele" id = "tlf" required>
+			</div>
+			<div>
+				<input type  ="button" class = "butform" value = "Hacer pedido">
+			</div>
+		</form>
 	</body>
 </html>

@@ -12,7 +12,11 @@
 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
 		<% User user = (User) session.getAttribute("user"); %>
 		<% String id_rest_str = (String) request.getAttribute("id"); %>
+		<% String err = (String) request.getAttribute("err"); %>
 			<h2> CARTA </h2>
+			<% if("1".equals(err)){ %>
+			<p> Error al añadir el plato, ya existe un plato con ese nombre </p>
+			<%}%>
 			<form action = "AddPlate.jsp">
 				<input type = "hidden" name = "idrest" value = "<%=id_rest_str%>">
 				<input type="submit" name = "addplate" value = "Añadir plato" >

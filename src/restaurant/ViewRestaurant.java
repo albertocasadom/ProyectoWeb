@@ -32,6 +32,8 @@ public class ViewRestaurant extends HttpServlet {
                 if(isadminrest){
                     ArrayList<Plato> cart = manager.searchCart(id_rest);
                     request.setAttribute("cart", cart);
+                    String err = request.getParameter("err");
+                    request.setAttribute("err",err);
                     RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurant.jsp");
                     rd.forward(request, response);
                 }else{

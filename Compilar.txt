@@ -2,4 +2,12 @@ cd src
 
 javac -d ../apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/ -cp ../apache-tomcat-8.0.47/webapps/proyecto/WEB-INF/classes/:../apache-tomcat-8.0.47/lib/servlet-api.jar restaurant/*java
 
+//JSON
+http://www.oracle.com/technetwork/articles/java/json-1973242.html
 
+https://www.adictosaltrabajo.com/tutoriales/gson-java-json/
+
+http://mvnrepository.com/artifact/org.json/json
+https://stackoverflow.com/questions/2591098/how-to-parse-json-in-java
+
+https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html ¡OJO!

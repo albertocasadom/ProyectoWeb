@@ -35,7 +35,9 @@ public class AddPlate extends HttpServlet {
             
 
             if(addplate){
-                  response.sendRedirect("rest?id=" + restaurant.getIdRest());
+                response.sendRedirect("rest?id=" + restaurant.getIdRest());
+            }else{
+                response.sendRedirect("rest?id=" + restaurant.getIdRest() + "&err=1"); //codigo de error cuando el plato ya existe.
             }
 
         }catch(SQLException | NamingException ex){

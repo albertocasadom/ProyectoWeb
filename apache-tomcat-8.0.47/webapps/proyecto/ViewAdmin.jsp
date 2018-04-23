@@ -33,7 +33,7 @@
 						<% for(int j = 0; j< ordersallrest.get(i).size(); j++){ %>
 							<tr>
 								<td> <%= ordersallrest.get(i).get(j).getIdOrder() %> </td>
-								<td> <%= ordersallrest.get(i).get(j).getFechaHora() %> </td>  //https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+								<td> <%= ordersallrest.get(i).get(j).getFechaHora() /*https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html%> */</td>  
 								<td> <%= ordersallrest.get(i).get(j).getState() %> </td>
 								<td> <%= ordersallrest.get(i).get(j).getPrecioTotal() %> € </td>		
 								<td> 
