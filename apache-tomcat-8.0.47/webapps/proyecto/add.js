@@ -1,10 +1,3 @@
-	
-		/* if(productos[id_clicked] === undefined){
-		 	productos[id_clicked] = 1;
-		 }else{
-		 	productos[id_clicked] += 1;
-
-		 }*/
 $(document).ready(function(){
 	 order = {};
 	 productos = {};
@@ -36,7 +29,7 @@ $(document).ready(function(){
 		order = {dir, city, tel, productos};
 		console.log(order);
 
-		$.post("newOrder",order);
+		$.post("newOrder",JSON.stringify(order));
 
 	});
 
