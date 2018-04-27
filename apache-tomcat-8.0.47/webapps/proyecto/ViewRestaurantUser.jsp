@@ -13,11 +13,13 @@
 	<body>
 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
 		<% User user = (User) session.getAttribute("user"); %>
-		<% %>
-		<% String id_rest_str = (String) request.getAttribute("id"); %>
+		<% String ciudad = (String) request.getAttribute("cit"); %>
+		<% int id_rest = (int) request.getAttribute("id_rest"); %>
+		<% System.out.println("Id del restaurante:" + id_rest); %>
 			<h2> CARTA </h2>
 			<form>
-				<input type = "hidden" name = "idrest" value = "<%=id_rest_str%>">
+				<input type = "hidden" class = "idrest" id = "<%=id_rest%>">
+				<input type = "hidden" class = "ciudadpedido" id = "<%= ciudad %>">
 				<table>
 					<thead>
 						<tr>

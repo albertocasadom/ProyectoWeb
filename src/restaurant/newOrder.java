@@ -20,6 +20,7 @@ public class newOrder extends HttpServlet {
     {
 
         HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
 
         BufferedReader buffer = request.getReader();
 
@@ -35,22 +36,35 @@ public class newOrder extends HttpServlet {
         String addr = jsob.getString("dir");
         String city = jsob.getString("city");
         String phone = jsob.getString("tel");
+        String id_rest_str = jsob.getString("id_rest");
+        int id_rest = Integer.parseInt(id_rest_str);
 
         System.out.println(addr + " " + city);
 
         JSONObject prods_js = jsob.getJSONObject("productos");
         String [] productos = jsob.getNames(prods_js);
         int cant [] = new int [productos.length];
+        float precio_total = 0;
 
         for(int i = 0; i< productos.length; i++){
             cant[i] = jsob.getJSONObject("productos").getInt(productos[i]);
             System.out.println(cant[i]);
         }
+        int prodint [] = new int [productos.length];
 
         try (DBManager manager = new DBManager()) {
+        for(int i = 0; i< producto.length; i++){
 
-            
+            prodint = Integer.parseInt(productos[i]);
 
+        }
+            for(int i = 0; i<productos.length; i++){
+                Plato plato = manager.searchPlatoById(prodint[i]);
+                precio_total += plato.getPrecio();
+            }
+
+
+            manager.insertPlatoOnOrder(user.getId(), city, addr, precio_total, id_rest, prodint, cant);
 
         }catch(SQLException | NamingException ex){
 

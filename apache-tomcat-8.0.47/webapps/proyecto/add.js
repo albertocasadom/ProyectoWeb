@@ -25,11 +25,19 @@ $(document).ready(function(){
 		var dir = $("#str").val();
 		var city = $("#cit").val();
 		var tel = $("#tlf").val();
+		var ciudad = $('.ciudadpedido').attr('id');
+		var id_rest = $('.idrest').attr('id');
+		console.log("id del restaurante  = " + id_rest);
 
-		order = {dir, city, tel, productos};
+		order = {dir, city, tel, id_rest, productos};
 		console.log(order);
 
-		$.post("newOrder",JSON.stringify(order));
+		if((city.localeCompare(ciudad)) === 0){
+			$.post("newOrder",JSON.stringify(order));
+		}else{
+			window.alert("Por favor, introduza una dirección dentro de la ciudad en la que ha realizado la búsqueda de restaurantes: " + ciudad);
+		
+		}
 
 	});
 

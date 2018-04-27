@@ -23,7 +23,6 @@ public class ViewRestaurant extends HttpServlet {
 
         if(user != null && user.getIdType() == 2){  
             try (DBManager manager = new DBManager()) {
-                System.out.println(request.getParameter("id"));
                 String id_rest_str = request.getParameter("id");
                 request.setAttribute("id",id_rest_str);
                 int id_rest = Integer.parseInt(id_rest_str);
@@ -47,10 +46,14 @@ public class ViewRestaurant extends HttpServlet {
             }
         }else if(user != null && user.getIdType() == 1){
 
+            String ciudad = request.getParameter("cit");
+
             try (DBManager manager = new DBManager()) {
 
                 String id_rest_str = request.getParameter("id");
+                request.setAttribute("cit",ciudad);
                 int id_rest = Integer.parseInt(id_rest_str);
+                request.setAttribute("id_rest", id_rest);
                 ArrayList<Plato> cart = manager.searchCart(id_rest);
                 request.setAttribute("cart", cart);
                 RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurantUser.jsp");

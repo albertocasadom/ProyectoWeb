@@ -44,6 +44,7 @@ PLATOS
 ORDERPLATOS	
 	-id_order				INT NOT NULL (FK -> ORDER.id_order)		
 	-id_plato				INT NOT NULL (FK -> PLATOS.id_plato)
+	-cantidad 				INT NOT NULL
 	
 		
 	

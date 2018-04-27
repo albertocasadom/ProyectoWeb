@@ -27,6 +27,7 @@ public class SearchRestaurant extends HttpServlet {
                 String ciudad = request.getParameter("rest");
                 ArrayList<Restaurant> foundrestaurants = manager.searchResults(ciudad);
                 request.setAttribute("foundrestaurants", foundrestaurants);
+                request.setAttribute("ciudad", ciudad);
                 RequestDispatcher rd = request.getRequestDispatcher("ViewResults.jsp");
                 rd.forward(request, response);
 
