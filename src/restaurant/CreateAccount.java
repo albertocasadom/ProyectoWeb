@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class CreateAccount extends HttpServlet {
 
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
     {
 

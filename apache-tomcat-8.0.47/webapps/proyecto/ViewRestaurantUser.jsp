@@ -78,5 +78,9 @@
 				<input type  ="button" class = "butform" value = "Hacer pedido">
 			</div>
 		</form>
+
+		<form action = "init">
+			<input type = submit value = "Volver al inicio">
+		</form>
 	</body>
 </html>
