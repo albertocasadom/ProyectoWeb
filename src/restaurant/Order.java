@@ -21,7 +21,15 @@ public class Order{
 	}
 
 	public String getState(){
-		return this.state;
+		if(this.state.equals("term")){
+			return "terminado";
+		}else if(this.state.equals("ready")){
+			return "listo";
+		}else if(this.state.equals("deliver")){
+			return "en reparto";
+		}else{
+			return "en progreso";
+		}
 	}
 
 	public void setState(String state){

@@ -548,11 +548,11 @@ public class DBManager implements AutoCloseable {
         return success;
     }
 
-    public boolean insertPlatoOnOrder(int id_user, String ciudad, String address_order, Float precio_total, 
+    public int insertPlatoOnOrder(int id_user, String ciudad, String address_order, Float precio_total, 
                                         int id_rest, int [] id_plato, int [] cantidad) throws SQLException{
 
         boolean success = false;
-        int id_order;
+        int id_order = 0;
         connection.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
         connection.setAutoCommit(false);
 
@@ -594,7 +594,7 @@ public class DBManager implements AutoCloseable {
             try(PreparedStatement st2 = connection.prepareStatement(queryOrderPlate)){
                 st2.setInt(1, id_order);
                 st2.setInt(2, id_plato[i]);
-                st2.setInt(3, cant[i]);
+                st2.setInt(3, cantidad[i]);
                 st2.executeUpdate();
             }
             success = true;
@@ -606,6 +606,76 @@ public class DBManager implements AutoCloseable {
         }
 
         connection.setAutoCommit(true);
-        return success;
+        return id_order;
     }
+
+    public Order searchOrder(int id_order)throws SQLException{
+
+        String query = "SELECT * FROM Orders WHERE id_order = ?";
+        Order order = null;
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+
+            st.setInt(1, id_order);
+            ResultSet rs = st.executeQuery();
+          
+            if(rs.next()){
+                order = new Order();
+                order.setIdOrder(rs.getInt("id_order"));
+                order.setState(rs.getString("state"));
+                order.setIdUser(rs.getInt("id_user"));
+                order.setAddressOrder(rs.getString("address_order"));
+                order.setPrecioTotal(rs.getFloat("precio_total"));
+                order.setFechaHora(rs.getTimestamp("fecha_hora"));
+                order.setIdRest(rs.getInt("id_rest"));                   
+            }
+            
+
+        }
+        return order;
+    }
+
+    public ArrayList<Plato> searchPlatesOfOrder(int id_order) throws SQLException{
+
+        String query = "SELECT * FROM Platos INNER JOIN OrderPlato ON Platos.id_plato = OrderPlato.id_plato INNER JOIN Orders ON Orders.id_order = OrderPlato.id_order WHERE Orders.id_order = ?";
+        ArrayList<Plato> platospedido = new ArrayList<Plato>();
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1,id_order);
+            ResultSet rs = st.executeQuery();
+
+            while(rs.next()){
+                Plato plato = new Plato();
+                plato.setIdPlato(rs.getInt("id_plato"));
+                plato.setNamePlate(rs.getString("nameplate"));
+                plato.setPrecio(rs.getFloat("precio"));
+                plato.setIdRest(rs.getInt("id_rest"));
+                plato.setDescripcion(rs.getString("descripcion"));
+
+                platospedido.add(plato);
+
+            }
+        }
+
+        return platospedido;
+    }
+
+    public int getNumOfPlates(int id_plato, int id_order) throws SQLException{
+
+        String query = "SELECT * FROM OrderPlato WHERE id_plato = ? AND id_order = ?";
+        int cantidad = 0;
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1,id_plato);
+            st.setInt(2,id_order);
+            ResultSet rs = st.executeQuery();
+
+            if(rs.next()){
+                cantidad = rs.getInt("cantidad");
+            }
+        }
+
+        return cantidad;
+    }
+    
 }

@@ -45,6 +45,7 @@ public class newOrder extends HttpServlet {
         String [] productos = jsob.getNames(prods_js);
         int cant [] = new int [productos.length];
         float precio_total = 0;
+        int id_order;
 
         for(int i = 0; i< productos.length; i++){
             cant[i] = jsob.getJSONObject("productos").getInt(productos[i]);
@@ -53,18 +54,19 @@ public class newOrder extends HttpServlet {
         int prodint [] = new int [productos.length];
 
         try (DBManager manager = new DBManager()) {
-        for(int i = 0; i< producto.length; i++){
-
-            prodint = Integer.parseInt(productos[i]);
-
-        }
+            for(int i = 0; i< productos.length; i++){
+            prodint[i] = Integer.parseInt(productos[i]);
+            }
             for(int i = 0; i<productos.length; i++){
                 Plato plato = manager.searchPlatoById(prodint[i]);
-                precio_total += plato.getPrecio();
+                precio_total += (plato.getPrecio()*cant[i]);
+                System.out.println(precio_total);
             }
-
-
-            manager.insertPlatoOnOrder(user.getId(), city, addr, precio_total, id_rest, prodint, cant);
+            id_order = manager.insertPlatoOnOrder(user.getId(), city, addr, precio_total, id_rest, prodint, cant);
+            
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.println(id_order);
 
         }catch(SQLException | NamingException ex){
 

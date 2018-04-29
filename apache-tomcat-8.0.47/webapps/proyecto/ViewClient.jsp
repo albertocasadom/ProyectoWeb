@@ -11,9 +11,9 @@
 	<body>
 		<% ArrayList<Order> orderlist = (ArrayList<Order>) session.getAttribute("orders"); %>
 
-		<form action = "search">
+		<form action = "search" method = "post">
 			<div>
-				<input type = "search" name = "rest" placeholder = "Ciudad"> 
+				<input type = "search" name = "rest" placeholder = "Ciudad" required> 
 				<input type = "submit" name = "search" value = "Buscar"> 
 			</div>	
 		</form>
@@ -27,13 +27,24 @@
 					</tr>
 				</thead>
 				<tbody>
-					<% for(int i = 0; i< orderlist.size(); i++){ %>
-					<tr>
-						<td> <%= orderlist.get(i).getIdOrder() %> </td>
-						<td> <%= orderlist.get(i).getFechaHora() %> </td>
-						<td> <%= orderlist.get(i).getState() %> </td>
-						<td> <%= orderlist.get(i).getPrecioTotal() %> € </td>
-					</tr>
+					<% if(orderlist.size() < 10){ %>
+						<% for(int i = 0; i< orderlist.size(); i++){ %>
+						<tr>
+							<td> <a href = "seeorder?id=<%=orderlist.get(i).getIdOrder()%>"><%= orderlist.get(i).getIdOrder() %> </a></td>
+							<td> <%= orderlist.get(i).getFechaHora() %> </td>
+							<td> <%= orderlist.get(i).getState() %> </td>
+							<td> <%= orderlist.get(i).getPrecioTotal() %> € </td>
+						</tr>
+						<% } %>
+					<% }else{ %>
+						<% for(int i = orderlist.size() - 10; i < orderlist.size(); i++){ %>
+							<tr>
+								<td> <%= orderlist.get(i).getIdOrder() %> </td>
+								<td> <%= orderlist.get(i).getFechaHora() %> </td>
+								<td> <%= orderlist.get(i).getState() %> </td>
+								<td> <%= orderlist.get(i).getPrecioTotal() %> € </td>
+							</tr>
+						<% } %>
 					<% } %>
 				</tbody>
 			</table>

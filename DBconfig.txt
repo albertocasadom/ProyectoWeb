@@ -27,7 +27,7 @@ CREATE TABLE Platos(id_plato INT NOT NULL auto_increment, nameplate VARCHAR(255)
 
 //TABLA ORDERPLATOS
 
-CREATE TABLE OrderPlato(id_order INT NOT NULL, id_plato INT NOT NULL, CONSTRAINT FOREIGN KEY (id_order) REFERENCES  Orders(id_order), CONSTRAINT FOREIGN KEY (id_plato) REFERENCES Platos(id_plato))ENGINE=INNODB;
+CREATE TABLE OrderPlato(id_order INT NOT NULL, id_plato INT NOT NULL, cantidad INT NOT NULL, CONSTRAINT FOREIGN KEY (id_order) REFERENCES  Orders(id_order), CONSTRAINT FOREIGN KEY (id_plato) REFERENCES Platos(id_plato))ENGINE=INNODB;
 
 // AÑADIR USUARIO
 
@@ -49,6 +49,6 @@ INSERT INTO Restaurants VALUES(1,'Telepizza','C/pizza N314', 'Leganes', '6696666
 
 INSERT INTO Platos (Platos.precio, Platos.id_rest, Platos.descripcion) VALUES (5.75,1, "Esto es un plato de prueba");
 
-
+url="jdbc:mysql://mysql.lab.it.uc3m.es/18_comweb_04d"
 
 

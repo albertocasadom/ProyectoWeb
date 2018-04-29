@@ -10,38 +10,54 @@
 		<meta charset = "UTF-8">
 		<title>Carta</title>
 	</head>
-	<body>
+	<body id = "result">
 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
 		<% User user = (User) session.getAttribute("user"); %>
 		<% String ciudad = (String) request.getAttribute("cit"); %>
 		<% int id_rest = (int) request.getAttribute("id_rest"); %>
-		<% System.out.println("Id del restaurante:" + id_rest); %>
-			<h2> CARTA </h2>
-			<form>
-				<input type = "hidden" class = "idrest" id = "<%=id_rest%>">
-				<input type = "hidden" class = "ciudadpedido" id = "<%= ciudad %>">
-				<table>
-					<thead>
-						<tr>
-							<th> Plato </th>
-							<th> Descripción</th>
-							<th> Precio </th>
-						</tr>
-					</thead>
-					<tbody>
-						<% for(int i = 0; i< cart.size(); i++){ %>
-						<tr>
-							<td> <%= cart.get(i).getNamePlate() %> </td>
-							<td> <%= cart.get(i).getDescripcion() %> </td>
-							<td> <%= cart.get(i).getPrecio() %> € </td>
-							<td><input type = "button" class = "boton" id = "<%=cart.get(i).getIdPlato()%>" value = "+" > </td>
-							<td><input type = "button" class = "botonminus" id = "<%=cart.get(i).getIdPlato()%>" value = "-" > </td>
+		<h2> CARTA </h2>
+		<form>
+			<input type = "hidden" class = "idrest" id = "<%=id_rest%>">
+			<input type = "hidden" class = "ciudadpedido" id = "<%= ciudad %>">
+			<table>
+				<thead>
+					<tr>
+						<th> Plato </th>
+						<th> Descripción</th>
+						<th> Precio </th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(int i = 0; i< cart.size(); i++){ %>
+					<tr>
+						<td> <%= cart.get(i).getNamePlate() %> </td>
+						<td> <%= cart.get(i).getDescripcion() %> </td>
+						<td> <%= cart.get(i).getPrecio() %> € </td>
+						<td><input type = "button" class = "boton" name = "<%=cart.get(i).getNamePlate()%>" id = "<%=cart.get(i).getIdPlato()%>" value = "+" > </td>
+						<td><input type = "button" class = "botonminus" name = "<%=cart.get(i).getNamePlate()%>" id = "<%=cart.get(i).getIdPlato()%>" value = "-" > </td>
+						<input type = "hidden" class = "<%=cart.get(i).getNamePlate()%>" value = "<%= cart.get(i).getPrecio() %>">
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</form>
 
-						</tr>
-						<% } %>
-					</tbody>
-				</table>
-			</form>
+		<h2> TOTAL DEL PEDIDO </h2>
+		<table id ="totalpedido">
+			<thead>
+				<tr>
+					<th> Producto </th>
+					<th> Unidades </th>
+					<th> Precio </th>
+				</tr>
+				<tbody>
+					<tr id="total">
+          				<td>Total:</td>
+          					<td></td>
+          				<td id="totalval">0.00 €</td>
+        			</tr>
+				</tbody>
+		</table>	
 
 
 		<h2> DIRECCIÓN DE ENTREGA </h2>

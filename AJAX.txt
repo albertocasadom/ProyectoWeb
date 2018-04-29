@@ -1,0 +1,20 @@
+
+
+El metodo $.load() se llama sobre un elemento de nuestro árbol DOM.
+	Se puede añadir al contenido del elemento que llamamos el contenido de la url que le introducimos por parámetro.
+	Con esta linea podemos pintar en el punto que queramos de nuestra página lo que recibamos del servidor.
+	Para extraer un fragmento de una pagina del servidor, tenemos que indicar su selector (como en css).
+
+	Es posible proporcionarle como segundo parametro una funcion de callback, que se ejecute cuando llegue la respuesta.
+
+	Para enterarnos si ha fallado la carga, es necesario incluir el fragmento de código presente en la diapositiva 9.
+
+Si cargamos algo que es tipo JSON (tenemos que saber que nos llega en este formato) y queremos hacer una petición GET hay que llamar a $.getJSON (sin necesidad de indicarle un elemento del arbol DOM). Se introduce una función de callback como parámetro al que se le pasa a su vez el objeto json. 
+
+Si queremos ser conscientes de si ha ocurrido un error hay que implementar .fail
+
+FUNCIÓN $.get() si no estamos seguros de si lo que nos llega es de tipo JSON, hay que emplear esta función, que es lo suficientemente inteligente para detectar como nos llega la información y devolvernosla de ese tipo. Es posible introducirle los parámetros que nosotros consideremos oportunos.
+
+FUNCIÓN $.post() cuando se envia una petición post, si le introducimos parámetros iran en el cuerpo de la peticion formateados a JSON. !!! HAY QUE PARSEARLO DE JSON EN EL SERVIDOR ¡¡¡
+
+david flanagan "javascript the definitive guide capitulos 18 y 19"

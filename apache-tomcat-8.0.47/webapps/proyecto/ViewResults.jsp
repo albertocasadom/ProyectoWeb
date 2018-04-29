@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset = "UTF-8">
-		<title>Inicio</title>
+		<title>Resultados de la búsqueda</title>
 	</head>
 	<body>
 		<% ArrayList<Restaurant> foundrestaurants = (ArrayList<Restaurant>) request.getAttribute("foundrestaurants"); %>
