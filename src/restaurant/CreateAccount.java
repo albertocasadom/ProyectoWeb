@@ -10,6 +10,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.sql.SQLException;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
 
 @WebServlet("/register")
 
@@ -21,6 +24,14 @@ public class CreateAccount extends HttpServlet {
     {
 
         HttpSession session = request.getSession();
+        String from = "0317102@lab.it.uc3m.es";
+        String host = "localhost";
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host", host);
+        properties.setProperty("mail.user", "0317102@lab.it.uc3m.es");
+        properties.setProperty("mail.password", "situriu2");
+        Session sesionmail = Session.getDefaultInstance(properties);
+        MimeMessage message;
 
         try (DBManager manager = new DBManager()) {
 
@@ -35,10 +46,21 @@ public class CreateAccount extends HttpServlet {
             String tel = request.getParameter("phone");
             boolean insertok = false;
 
+            
+
             if((mail.equals(remail)) && (userpass.equals(reuserpass))){
                 insertok = manager.insertUser(name,surname,mail,userpass,address,ciudad,tel);
-
                 if(insertok == true){
+                    try{
+                        message = new MimeMessage(sesionmail);
+                        message.setFrom(new InternetAddress(from));
+                        message.addRecipient(Message.RecipientType.TO, new InternetAddress(mail));
+                        message.setSubject("¡ Bienvenid@ !");
+                        message.setText("¡ YA PUEDES DISFRUTAR DE TODOS LOS RESTAURANTES DE TU CIUDAD !");
+                        Transport.send(message);
+                    }catch (MessagingException mex) {
+                        mex.printStackTrace();
+                    }     
                     response.sendRedirect("index.html");  
                 }else{
                     response.sendRedirect("createaccount.html");
