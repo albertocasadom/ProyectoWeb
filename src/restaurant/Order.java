@@ -28,7 +28,7 @@ public class Order{
 		}else if(this.state.equals("deliver")){
 			return "en reparto";
 		}else{
-			return "en progreso";
+			return "en proceso";
 		}
 	}
 

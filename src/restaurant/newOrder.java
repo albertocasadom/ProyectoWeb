@@ -55,7 +55,7 @@ public class newOrder extends HttpServlet {
 
         try (DBManager manager = new DBManager()) {
             for(int i = 0; i< productos.length; i++){
-            prodint[i] = Integer.parseInt(productos[i]);
+                prodint[i] = Integer.parseInt(productos[i]);
             }
             for(int i = 0; i<productos.length; i++){
                 Plato plato = manager.searchPlatoById(prodint[i]);
@@ -63,7 +63,7 @@ public class newOrder extends HttpServlet {
                 System.out.println(precio_total);
             }
             id_order = manager.insertPlatoOnOrder(user.getId(), city, addr, precio_total, id_rest, prodint, cant);
-            
+
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             out.println(id_order);

@@ -28,11 +28,23 @@ public class InitSession extends HttpServlet {
             String userpass = request.getParameter("pass");
             User user = manager.searchUser(mail, userpass);
 
-            if(user != null){
+            String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+            System.out.println(gRecaptchaResponse);
+            boolean verify = VerifyRecaptcha.verify(gRecaptchaResponse);
+
+            if(user != null  && verify){
                     session.setAttribute("user",user);
                     response.sendRedirect("init");
                 
             }else{
+
+                PrintWriter out = response.getWriter();
+                if (verify) {
+                  out.println("<font color=red>Either user name or password is wrong.</font>");
+                } else {
+                  out.println("<font color=red>You missed the Captcha.</font>");
+                }
+                
                 response.sendRedirect("index.html");
             }    
 

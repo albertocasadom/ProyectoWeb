@@ -46,8 +46,6 @@ public class CreateAccount extends HttpServlet {
             String tel = request.getParameter("phone");
             boolean insertok = false;
 
-            
-
             if((mail.equals(remail)) && (userpass.equals(reuserpass))){
                 insertok = manager.insertUser(name,surname,mail,userpass,address,ciudad,tel);
                 if(insertok == true){

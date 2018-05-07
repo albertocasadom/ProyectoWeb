@@ -41,7 +41,7 @@ input[name="init"] {
     position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: 50px;
+	margin-top: 150px;
 	margin-left: 32px;
 	width: 120px;
 }
@@ -57,7 +57,7 @@ input[name="create"] {
 	top: 45%;
 	left: 45%;
 	margin-top: 100px;
-	margin-left: -75px;
+	margin-left: -175px;
 	width: 120px; 
 
 }
@@ -90,8 +90,6 @@ input[type=text]:focus {
 	left: 45%;
 	margin-top: -100px;
 	margin-left: -125px;
-
-
-
 }
+
 

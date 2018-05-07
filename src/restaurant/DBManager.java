@@ -677,5 +677,7 @@ public class DBManager implements AutoCloseable {
 
         return cantidad;
     }
+
+    
     
 }

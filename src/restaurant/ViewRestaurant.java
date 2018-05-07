@@ -20,7 +20,7 @@ public class ViewRestaurant extends HttpServlet {
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
+       
         if(user != null && user.getIdType() == 2){  
             try (DBManager manager = new DBManager()) {
                 String id_rest_str = request.getParameter("id");
