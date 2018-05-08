@@ -19,25 +19,37 @@ public class ChangeState extends HttpServlet {
     {
 
         HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
 
-        try (DBManager manager = new DBManager()) {
+        if((user == null) || (user.getIdType() != User.TYPE_ADMIN)){
+            session.invalidate();
+            response.sendRedirect("index.html");
+        }else{
 
-            String state= request.getParameter("state");
-            String idorderstr [] = request.getParameterValues("idorder");
-            System.out.println(state);
-            System.out.println(idorderstr[0]);
-            int idorder = Integer.parseInt(idorderstr[0]);
-            boolean changestate = manager.changeState(idorder, state);
+            try (DBManager manager = new DBManager()) {
 
-            if(changestate){
-                response.sendRedirect("init");
+                String state= request.getParameter("state");
+                String idorderstr [] = request.getParameterValues("idorder");
+                System.out.println(state);
+                System.out.println(idorderstr[0]);
+                int idorder = Integer.parseInt(idorderstr[0]);
+                Restaurant restaurant = manager.searchRestsByIdOrder(idorder);
+                if(!(manager.isAdminOfRest(user.getId(), restaurant.getIdRest()))){
+                    System.out.println( user.getId() + " : Está intentando acceder a un resaturante que no gestiona");
+                    session.invalidate();
+                    response.sendRedirect("index.html");
+                }else{
+                    boolean changestate = manager.changeState(idorder, state);
+
+                    if(changestate){
+                        response.sendRedirect("init");
+                    }
+                }
+            }catch(SQLException | NamingException ex){
+
+                    ex.printStackTrace();
+                    response.sendRedirect("Error.jsp");
             }
-            
-        }catch(SQLException | NamingException ex){
-
-                ex.printStackTrace();
-                response.sendError(500);
         }
-
     }
 }

@@ -1,0 +1,48 @@
+body{
+
+	background-image: url("prueba.jpg");
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	font-family: arial, verdana, sans-serif;
+}
+label{
+	font-size: 25px;
+	color :#2b3737
+}
+.container{
+  background-color: rgba(228, 169, 46, 0.72);
+	border-radius: 20%;
+	width: 500px;
+	height: 600px;
+	position: absolute;
+	top: 30%;
+	left: 40%;
+	margin-top: -100px;
+	margin-left: -125px;
+}
+.centralbox{
+  align: center;
+  margin-top: 10%;
+  margin-left: 10%;
+  }
+
+input[name="register"] {
+    padding:10px 25px;
+    background:#9b9b9b;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 7px;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 23%;
+	margin-left: -40%;
+	width: 120px;
+
+}
+
+.in{
+	height: 30px ;
+}

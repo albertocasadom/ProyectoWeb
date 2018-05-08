@@ -1,4 +1,4 @@
-<%@ page language ='java' contentType ='text/html;charset=utf-8' isErrorPage='false' errorPage='error.jsp' %>
+<%@ page language ='java' contentType ='text/html;charset=utf-8' isErrorPage='false' errorPage='Error.jsp' %>
 <%@ page import ='restaurant.*' %>
 <%@ page import ='java.util.*' %>
 
@@ -32,7 +32,7 @@
 					<tbody>
 						<% for(int j = 0; j< ordersallrest.get(i).size(); j++){ %>
 							<tr>
-								<td> <%= ordersallrest.get(i).get(j).getIdOrder() %> </td>
+								<td> <a href = "seeorder?id=<%=ordersallrest.get(i).get(j).getIdOrder()%>"><%= ordersallrest.get(i).get(j).getIdOrder() %></a></td>
 								<td> <%= ordersallrest.get(i).get(j).getFechaHora() %> </td>  
 								<td> <%= ordersallrest.get(i).get(j).getState() %> </td>
 								<td> <%= ordersallrest.get(i).get(j).getPrecioTotal() %> € </td>		

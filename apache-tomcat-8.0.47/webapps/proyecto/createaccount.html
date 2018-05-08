@@ -7,54 +7,58 @@
 		<link rel="stylesheet" href="registrate.css" type = "text/css">
 	</header>
 	<body>
-		<form action = "register" method = "post">
-			<div>
-				<label> Nombre
-					<input type ="text" name = "name" required>
-				</label>
+		<div class = container>
+			<div class = centralbox>
+				<form action = "register" method = "post">
+					<div>
+						<label> Nombre
+							<input type ="text" name = "name" required>
+						</label>
+					</div>
+					<div>
+						<label> Apellidos
+							<input type ="text" name = "surname" class = "in" required>
+						</label>
+					</div>
+					<div>
+						<label> Usuario
+							<input type ="email" name = "nick" class = "in" placeholder = "example@example.com" required>
+						</label>
+					</div>
+					<div>
+						<label> Repetir Usuario
+							<input type ="email" name = "nickrepeat" class = "in" placeholder = "example@example.com" required>
+						</label>
+					</div>
+					<div>
+						<label> Contraseña
+							<input type ="password" name = "newpass" class = "in" required>
+						</label>
+					</div>
+					<div>
+						<label> Repetir Contraseña
+							<input type ="password" name = "newpassrepeat" class = "in" required>
+						</label>
+					</div>
+					<div>
+						<label> Dirección
+							<input type ="text" name = "address" class = "in" placeholder = "C/calle, N83, CP" required>
+						</label>
+					</div>
+					<div>
+						<label> Ciudad
+							<input type ="text" name = "ciudad" class = "in" placeholder = "Ciudad, p.ej: Madrid" required>
+						</label>
+					</div>
+					<div>
+						<label> Número de Telefono
+							<input type ="tel" name = "phone" class = "in" required>
+						</label>
+					</div>
+					<div>
+						<input type = "submit" name = "register" value ="Regístrame" required>
+					</div>
+				</form>
 			</div>
-			<div>
-				<label> Apellidos
-					<input type ="text" name = "surname" required>
-				</label>
-			</div>
-			<div>
-				<label> Usuario
-					<input type ="email" name = "nick" placeholder = "example@example.com" required>
-				</label>
-			</div>
-			<div>
-				<label> Repetir Usuario
-					<input type ="email" name = "nickrepeat" placeholder = "example@example.com" required>
-				</label>
-			</div>
-			<div>			
-				<label> Contraseña
-					<input type ="password" name = "newpass" required>
-				</label>
-			</div>
-			<div>
-				<label> Repetir Contraseña
-					<input type ="password" name = "newpassrepeat" required>
-				</label>
-			</div>
-			<div>
-				<label> Dirección
-					<input type ="text" name = "address" placeholder = "C/calle, N83, CP" required>
-				</label>
-			</div>
-			<div>
-				<label> Ciudad
-					<input type ="text" name = "ciudad" placeholder = "Ciudad, p.ej: Madrid" required>
-				</label>
-			</div>
-			<div>
-				<label> Número de Telefono
-					<input type ="tel" name = "phone" required>
-				</label>
-			</div>
-			<div>
-				<input type = "submit" name = "register" value ="Regístrame" required>
-			</div>
-		</form>	
+		</div>
 	</body>

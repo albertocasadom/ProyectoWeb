@@ -18,7 +18,6 @@ import javax.activation.*;
 
 public class CreateAccount extends HttpServlet {
 
-
     public void doPost(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
     {
@@ -73,7 +72,7 @@ public class CreateAccount extends HttpServlet {
         }catch(SQLException | NamingException ex){
 
                 ex.printStackTrace();
-                response.sendError(500);
+                response.sendRedirect("Error.jsp");
         }
 
     }

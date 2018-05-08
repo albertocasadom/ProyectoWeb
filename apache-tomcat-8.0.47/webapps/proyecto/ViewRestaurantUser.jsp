@@ -1,4 +1,4 @@
-<%@ page language ='java' contentType ='text/html;charset=utf-8' isErrorPage='false' %>
+<%@ page language ='java' contentType ='text/html;charset=utf-8' isErrorPage='false' errorPage = "Error.jsp"%>
 <%@ page import ='restaurant.*' %>
 <%@ page import ='java.util.*' %>
 

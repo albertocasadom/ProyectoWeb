@@ -1,4 +1,4 @@
-<%@ page language ='java' contentType ='text/html;charset=utf-8' isErrorPage='false' %>
+<%@ page language ='java' contentType ='text/html;charset=utf-8' isErrorPage='false' errorPage = "Error.jsp"%>
 <%@ page import ='restaurant.*' %>
 <%@ page import ='java.util.*' %>
 
@@ -14,7 +14,9 @@
 		<% Restaurant restaurant = (Restaurant) request.getAttribute("restaurant"); %>
 		<% ArrayList<Plato> listaplatos = (ArrayList<Plato>) request.getAttribute("listaplatos"); %>
 		<% int [] cantidad = (int []) request.getAttribute("cantidad"); %>
+		<% if(user.getIdType() == User.TYPE_CUSTOMER){ %>
 			<h2> <%=user.getName()%> tu pedido está <i><%= order.getState() %> </i></h2>
+		<%}%>
 			<table>
 				<thead>
 					<tr>

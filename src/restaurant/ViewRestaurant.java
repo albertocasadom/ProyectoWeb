@@ -21,14 +21,15 @@ public class ViewRestaurant extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
        
-        if(user != null && user.getIdType() == 2){  
+        if(user != null && user.getIdType() == User.TYPE_ADMIN){  
             try (DBManager manager = new DBManager()) {
                 String id_rest_str = request.getParameter("id");
                 request.setAttribute("id",id_rest_str);
                 int id_rest = Integer.parseInt(id_rest_str);
                 boolean isadminrest = manager.isAdminOfRest(user.getId(), id_rest);
+                Restaurant restexist = manager.searchRestByIdRest(id_rest);
 
-                if(isadminrest){
+                if(isadminrest || restexist!= null){
                     ArrayList<Plato> cart = manager.searchCart(id_rest);
                     request.setAttribute("cart", cart);
                     String err = request.getParameter("err");
@@ -36,15 +37,15 @@ public class ViewRestaurant extends HttpServlet {
                     RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurant.jsp");
                     rd.forward(request, response);
                 }else{
-
-                    response.sendError(500);
+                    session.invalidate();
+                    response.sendRedirect("index.html");
                 }
             }catch(SQLException | NamingException ex){
 
                     ex.printStackTrace();
-                    response.sendError(500);
+                    response.sendRedirect("Error.jsp");
             }
-        }else if(user != null && user.getIdType() == 1){
+        }else if(user != null && user.getIdType() == User.TYPE_CUSTOMER){
 
             String ciudad = request.getParameter("cit");
 
@@ -56,17 +57,22 @@ public class ViewRestaurant extends HttpServlet {
                 request.setAttribute("id_rest", id_rest);
                 ArrayList<Plato> cart = manager.searchCart(id_rest);
                 request.setAttribute("cart", cart);
-                RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurantUser.jsp");
-                rd.forward(request, response);
+                Restaurant restexist = manager.searchRestByIdRest(id_rest);
+                if(restexist != null){
+                    RequestDispatcher rd = request.getRequestDispatcher("ViewRestaurantUser.jsp");
+                    rd.forward(request, response);
+                }else{
+                    response.sendRedirect("Error.jsp");
+                }
 
             }catch(SQLException | NamingException ex){
 
                     ex.printStackTrace();
-                    response.sendError(500);
+                    response.sendRedirect("Error.jsp");
             }    
         }else{
-
-            response.sendError(500);
+            session.invalidate();
+            response.sendRedirect("index.html");
         }
     }
 }

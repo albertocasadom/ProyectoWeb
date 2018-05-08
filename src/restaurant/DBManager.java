@@ -76,7 +76,6 @@ public class DBManager implements AutoCloseable {
           
             }else{
                 System.out.println("No existe el usuario");
-            
             }
 
         }
@@ -109,22 +108,13 @@ public class DBManager implements AutoCloseable {
                 st.executeUpdate();
 
                 success = true;
-            
-            }catch(Exception e){
-                System.out.println(e);  
             }
         }    
-
         if(success){
-
             connection.commit();
-
         }else{
-
             connection.rollback();
-
         }
-
         connection.setAutoCommit(true);
         return success;
     }
@@ -159,8 +149,6 @@ public class DBManager implements AutoCloseable {
           
             }
 
-        }catch(Exception e){
-            System.out.println(e);
         }
 
         return orderlist;
@@ -196,8 +184,6 @@ public class DBManager implements AutoCloseable {
           
             }
 
-        }catch(Exception e){
-            System.out.println(e);
         }
 
         return orderlist;
@@ -228,10 +214,7 @@ public class DBManager implements AutoCloseable {
                         
             }
 
-        }catch(Exception e){
-            System.out.println(e);
         }
-
         return restaurantlist;
     }
 
@@ -260,10 +243,7 @@ public class DBManager implements AutoCloseable {
                         
             }
 
-        }catch(Exception e){
-            System.out.println(e);
         }
-
         return cart;
     }
 
@@ -290,11 +270,7 @@ public class DBManager implements AutoCloseable {
                 foundrestaurants.add(restaurant);
                         
             }
-
-        }catch(Exception e){
-            System.out.println(e);
         }
-
         return foundrestaurants;
     }
 
@@ -312,24 +288,14 @@ public class DBManager implements AutoCloseable {
             st.executeUpdate();
             success = true;
 
-        }catch(Exception e){
-                System.out.println(e);  
-        }
-          
+        }   
         if(success){
-
             connection.commit();
-
         }else{
-
             connection.rollback();
-
         }
-
         connection.setAutoCommit(true);
         return success;
-
-
     }  
 
        public boolean changePrice(int idPlato, Float newprice) throws SQLException{
@@ -678,6 +644,44 @@ public class DBManager implements AutoCloseable {
         return cantidad;
     }
 
-    
-    
+    public Restaurant searchRestsByIdOrder(int id_order) throws SQLException{
+
+        Restaurant restaurant = null;
+        String query = "SELECT * FROM Restaurants INNER JOIN Orders ON Restaurants.id_rest = Orders.id_rest WHERE id_order = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_order);
+            ResultSet rs = st.executeQuery();         
+           
+            if(rs.next()){
+                restaurant = new Restaurant();
+                restaurant.setIdRest(rs.getInt("id_rest"));
+                restaurant.setNameRest(rs.getString("name_rest"));
+                restaurant.setAddressRest(rs.getString("address_rest"));
+                restaurant.setCiudad(rs.getString("ciudad"));
+                restaurant.setPhoneRest(rs.getString("phone_rest"));
+                restaurant.setTypeRest(rs.getString("typ_rest"));                      
+            }
+        }
+        return restaurant;
+    }
+
+      public boolean isOrderOfUser(int id_user, int id_order) throws SQLException{
+
+        boolean istrue = false;
+        String query = "SELECT * FROM Orders INNER JOIN Users ON Users.id_user = Orders.id_user WHERE Users.id_user = ? AND Orders.id_order = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setInt(1, id_user);
+            st.setInt(2, id_order);
+            ResultSet rs = st.executeQuery();
+                   
+            if(rs.next()){
+                istrue = true;                       
+            }
+        }
+
+        return istrue;
+    }
+   
 }

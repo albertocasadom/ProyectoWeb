@@ -24,7 +24,8 @@ public class ViewUser extends HttpServlet {
 
         User user = (User) session.getAttribute("user");
         System.out.println(user.getIdType());
-        if(user.getIdType() == 1){
+        
+        if(user != null && user.getIdType() == User.TYPE_CUSTOMER){
 
             try (DBManager manager = new DBManager()) {  
                 ArrayList<Order> orders = manager.searchOrdersUser(user.getId());
@@ -34,10 +35,10 @@ public class ViewUser extends HttpServlet {
             }catch(SQLException | NamingException ex){
 
                 ex.printStackTrace();
-                response.sendError(500);
+                response.sendRedirect("Error.jsp");
             }
 
-		}else{
+		}else if (user != null && user.getIdType() == User.TYPE_ADMIN){
 
             try (DBManager manager = new DBManager()) {  
                 ArrayList<Restaurant> restaurants = manager.searchRestsofAdmin(user.getId());
@@ -56,8 +57,11 @@ public class ViewUser extends HttpServlet {
             }catch(SQLException | NamingException ex){
 
                 ex.printStackTrace();
-                response.sendError(500);
+                response.sendRedirect("Error.jsp");
             }
+        }else{
+            session.invalidate();
+            response.sendRedirect("index.html");
         }
 
     }

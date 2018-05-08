@@ -19,25 +19,35 @@ public class DeletePlate extends HttpServlet {
     {
 
         HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+       
+        if((user == null) || (user.getIdType() != User.TYPE_ADMIN)){
+            session.invalidate();
+            response.sendRedirect("index.html");
+        }else{
 
-        try (DBManager manager = new DBManager()) {
+            try (DBManager manager = new DBManager()) {
 
-            String idplatostr [] = request.getParameterValues("idplatodelete");            
-            System.out.println(idplatostr[0]);
-            int idplato = Integer.parseInt(idplatostr[0]);
-            System.out.println(idplato);
-            Restaurant restaurant = manager.searchRestByPlate(idplato);
-            boolean deleteplate = manager.deletePlate(idplato);
+                String idplatostr [] = request.getParameterValues("idplatodelete");            
+                System.out.println(idplatostr[0]);
+                int idplato = Integer.parseInt(idplatostr[0]);
+                System.out.println(idplato);
+                Restaurant restaurant = manager.searchRestByPlate(idplato);
+                if(!(manager.isAdminOfRest(user.getId(), restaurant.getIdRest()))){
+                    System.out.println( user.getId() + " : Está intentando acceder a un resaturante que no gestiona");
+                    session.invalidate();
+                    response.sendRedirect("index.html");
+                }else{
+                    boolean deleteplate = manager.deletePlate(idplato);
+                    if(deleteplate){
+                          response.sendRedirect("rest?id=" + restaurant.getIdRest());
+                    }
+                }
+            }catch(SQLException | NamingException ex){
 
-            if(deleteplate){
-                  response.sendRedirect("rest?id=" + restaurant.getIdRest());
+                    ex.printStackTrace();
+                    response.sendRedirect("Error.jsp");
             }
-
-        }catch(SQLException | NamingException ex){
-
-                ex.printStackTrace();
-                response.sendError(500);
         }
-
     }
 }

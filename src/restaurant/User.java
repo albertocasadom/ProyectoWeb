@@ -10,6 +10,8 @@ public class User{
 	private String phone;
 	private int id;
 	private int idType;
+	public final static int TYPE_CUSTOMER = 1;
+	public final static int TYPE_ADMIN = 2;
 
 	public String getName(){
 		return this.name;

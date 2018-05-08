@@ -19,29 +19,39 @@ public class ChangePrice extends HttpServlet {
     {
 
         HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
 
-        try (DBManager manager = new DBManager()) {
+        if((user == null) || (user.getIdType() != User.TYPE_ADMIN)){
+            session.invalidate();
+            response.sendRedirect("index.html");
+        }else{
 
-            String preciostr = request.getParameter("newprice");
-            String idplatostr [] = request.getParameterValues("idplato");            
-            System.out.println(preciostr);
-            System.out.println(idplatostr[0]);
-            float precio = Float.parseFloat(preciostr);
-            int idplato = Integer.parseInt(idplatostr[0]);
-            boolean changeprice = manager.changePrice(idplato, precio);
-            Restaurant restaurant = manager.searchRestByPlate(idplato);
-            System.out.println(restaurant.getIdRest());
-            
+            try (DBManager manager = new DBManager()) {
 
-            if(changeprice){
-                  response.sendRedirect("rest?id=" + restaurant.getIdRest());
+                String preciostr = request.getParameter("newprice");
+                String idplatostr [] = request.getParameterValues("idplato");            
+                System.out.println(preciostr);
+                System.out.println(idplatostr[0]);
+                float precio = Float.parseFloat(preciostr);
+                int idplato = Integer.parseInt(idplatostr[0]);
+                Restaurant restaurant = manager.searchRestByPlate(idplato);
+                if(!(manager.isAdminOfRest(user.getId(), restaurant.getIdRest()))){
+                    System.out.println( user.getId() + " : Está intentando acceder a un resaturante que no gestiona");
+                    session.invalidate();
+                    response.sendRedirect("index.html");
+                }else{
+                    boolean changeprice = manager.changePrice(idplato, precio);
+                    System.out.println(restaurant.getIdRest());
+                    
+                    if(changeprice){
+                          response.sendRedirect("rest?id=" + restaurant.getIdRest());
+                    }
+                }
+            }catch(SQLException | NamingException ex){
+
+                    ex.printStackTrace();
+                    response.sendRedirect("Error.jsp");
             }
-
-        }catch(SQLException | NamingException ex){
-
-                ex.printStackTrace();
-                response.sendError(500);
         }
-
     }
 }

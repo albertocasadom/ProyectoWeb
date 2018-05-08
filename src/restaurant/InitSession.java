@@ -36,22 +36,14 @@ public class InitSession extends HttpServlet {
                     session.setAttribute("user",user);
                     response.sendRedirect("init");
                 
-            }else{
-
-                PrintWriter out = response.getWriter();
-                if (verify) {
-                  out.println("<font color=red>Either user name or password is wrong.</font>");
-                } else {
-                  out.println("<font color=red>You missed the Captcha.</font>");
-                }
-                
+            }else{               
                 response.sendRedirect("index.html");
             }    
 
         }catch(SQLException | NamingException ex){
 
                 ex.printStackTrace();
-                response.sendError(500);
+                response.sendRedirect("Error.jsp");
         }
 
     }

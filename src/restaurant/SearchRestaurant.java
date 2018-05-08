@@ -34,11 +34,11 @@ public class SearchRestaurant extends HttpServlet {
             }catch(SQLException | NamingException ex){
 
                     ex.printStackTrace();
-                    response.sendError(500);
+                    response.sendRedirect("Error.jsp");
             }
         }else{
 
-            response.sendError(500);
+            response.sendRedirect("index.html");
         }
     }
 }
