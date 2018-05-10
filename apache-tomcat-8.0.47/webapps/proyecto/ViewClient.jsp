@@ -13,12 +13,29 @@
 		<% ArrayList<Order> orderlist = (ArrayList<Order>) session.getAttribute("orders"); %>
 
 
-		<form action = "search" method = "post" class="navbar-form navbar-left" role="search">
+		<form action = "search" method = "post" class="navbar-form navbar-left" >
 			<div class="form-group">
 				<input type = "search"  class="form-control" name = "rest" placeholder = "Ciudad" required> 
 				<input type = "submit"    class="btn btn-default"  name = "search" value = "Buscar">
 			</div>	
-		</form>
+		</form class="form-inline">
+			<div class="form-group">
+				<form action = "resttype?id=ff" method = "post">
+					<input type = "submit" class="form-control" class="btn btn-default" value = "Fast Food">
+				</form>
+				<form action  ="resttype?id=eu"  method = "post">
+					<input type = "submit" class="form-control" class="btn btn-default" value = "Comida Europea">
+				</form>
+				<form action = "resttype?id=asa" method = "post"> 
+					<input type = "submit" class="form-control" class="btn btn-default" value = "Asador">
+				</form>
+				<form action= "resttype?id=cafe"  method = "post">
+					<input type = "submit" class="form-control" class="btn btn-default" value = "Desayunos / Brunch">
+				</form>
+				<form action = "resttype?id=asia" method = "post">
+					<input type = "submit" class="form-control" class="btn btn-default" value = "Asiatico">  
+				</form>
+			</div>
 			<table class="table table-hover">
 				<thead class="thead-dark">
 					<tr>

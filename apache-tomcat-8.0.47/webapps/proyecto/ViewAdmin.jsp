@@ -9,6 +9,7 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title>Inicio</title>
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	</head>
 	<body>
 
@@ -19,8 +20,8 @@
 			<div>
 				<h2> <a href = "/proyecto/rest?id=<%=restaurantslist.get(i).getIdRest()%>"><%= restaurantslist.get(i).getNameRest() %>, <%=restaurantslist.get(i).getAddressRest() %></a></h2>
 			</div>
-				<table>
-					<thead>
+				<table class="table table-hover">
+					<thead class="thead-dark">
 						<tr>
 							<th> Pedido </th>
 							<th> Fecha y Hora última actualización </th>

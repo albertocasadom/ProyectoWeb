@@ -55,7 +55,7 @@ public class User{
 	}
 
 	public String getCiudad(){
-		return this.address;
+		return this.ciudad;
 	}
 
 	public void setCiudad(String ciudad){

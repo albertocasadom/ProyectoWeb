@@ -7,12 +7,19 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title>Resultados de la búsqueda</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	</head>
 	<body>
 		<% ArrayList<Restaurant> foundrestaurants = (ArrayList<Restaurant>) request.getAttribute("foundrestaurants"); %>
 		<% String ciudad = (String) request.getAttribute("ciudad"); %>
-			<table>
-				<thead>
+		<%if(foundrestaurants.size() == 0){%>
+			<h2> No hay ningun restaurante del tipo seleccionado </h2>
+			<form action = "init">
+				<input type  ="submit" value = "Inicio">
+			</form>
+		<%} else{%>	
+			<table class="table table-hover">
+				<thead class="thead-dark">
 					<tr>
 						<th> Nombre </th>
 						<th> Direccion</th>
@@ -27,5 +34,6 @@
 					<% } %>
 				</tbody>
 			</table>
+		<%}%>	
 	</body>
 </html>

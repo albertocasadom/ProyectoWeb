@@ -7,6 +7,7 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title>Tu pedido</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	</head>
 	<body>
 		<% User user = (User) session.getAttribute("user"); %>
@@ -17,8 +18,8 @@
 		<% if(user.getIdType() == User.TYPE_CUSTOMER){ %>
 			<h2> <%=user.getName()%> tu pedido está <i><%= order.getState() %> </i></h2>
 		<%}%>
-			<table>
-				<thead>
+			<table class="table-hover ctr table">
+				<thead class="thead-dark">
 					<tr>
 						<th> Identificador </th>
 						<th> Fecha y hora </th>
@@ -38,9 +39,9 @@
 				</tbody>
 			</table>
 
-			<ol>
+			<ol class="list-group">
 				<% for(int i=0; i< listaplatos.size(); i++){ %>
-					<li> <%= listaplatos.get(i).getNamePlate() %> x <%=cantidad[i]%> >> <%=listaplatos.get(i).getPrecio()%> € </li>
+					<li class="list-group-item"> <%= listaplatos.get(i).getNamePlate() %> x <%=cantidad[i]%> >> <%=listaplatos.get(i).getPrecio()%> € </li>
 				<% } %>
 			</ol>
 	</body>

@@ -52,7 +52,7 @@ public class DBManager implements AutoCloseable {
 
     public User searchUser(String mail, String pass) throws SQLException {
         
-        String query = "SELECT * FROM Users WHERE mail = ? AND pass = ?";
+        String query = "SELECT * FROM Users WHERE mail = BINARY ? AND pass = BINARY ?";
         User user = null;
 
         try(PreparedStatement st = connection.prepareStatement(query)){
@@ -271,6 +271,36 @@ public class DBManager implements AutoCloseable {
                         
             }
         }
+        return foundrestaurants;
+    }
+
+
+        public ArrayList<Restaurant> searchResultsFoodType(String ciudad, String type_rest) throws SQLException{
+
+        ArrayList<Restaurant> foundrestaurants = new ArrayList<Restaurant>();
+
+        String query = "SELECT * FROM Restaurants WHERE Restaurants.ciudad = ? AND Restaurants.typ_rest = ?";
+
+        try(PreparedStatement st = connection.prepareStatement(query)){
+            st.setString(1, ciudad);
+            st.setString(2, type_rest);
+            ResultSet rs = st.executeQuery();
+            
+            while(rs.next()){
+
+                Restaurant restaurant = new Restaurant();
+                restaurant.setIdRest(rs.getInt("id_rest"));
+                restaurant.setNameRest(rs.getString("name_rest"));
+                restaurant.setAddressRest(rs.getString("address_rest"));
+                restaurant.setCiudad(rs.getString("ciudad"));
+                restaurant.setPhoneRest(rs.getString("phone_rest"));
+                restaurant.setTypeRest(rs.getString("typ_rest"));
+                
+                foundrestaurants.add(restaurant);
+                        
+            }
+        }
+
         return foundrestaurants;
     }
 

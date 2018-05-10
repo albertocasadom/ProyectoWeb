@@ -1,5 +1,4 @@
 body{
-
 	background-image: url("prueba.jpg");
 	background-repeat:no-repeat;
 	background-attachment: fixed;
@@ -12,21 +11,23 @@ label{
 }
 .container{
   background-color: rgba(228, 169, 46, 0.72);
-	border-radius: 20%;
-	width: 500px;
-	height: 600px;
+	border-radius: 7.5%;
+	width: 400px;
+	height: 800px;
 	position: absolute;
-	top: 30%;
-	left: 40%;
+	top: 18%;
+	left: 45.5%;
 	margin-top: -100px;
 	margin-left: -125px;
 }
 .centralbox{
   align: center;
   margin-top: 10%;
-  margin-left: 10%;
+  margin-left: 20%;
   }
-
+.boxes{
+	margin: .3em 47px;
+}
 input[name="register"] {
     padding:10px 25px;
     background:#9b9b9b;
@@ -35,14 +36,20 @@ input[name="register"] {
     -webkit-border-radius: 5px;
     border-radius: 7px;
     position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: 23%;
-	margin-left: -40%;
-	width: 120px;
-
+		top: 55%;
+		left: 60%;
+		margin-top: 75%;
+		margin-left: -23%;
+		width: 120px;
 }
 
 .in{
-	height: 30px ;
+	height: 30px;
+}
+
+input{
+    padding:5px;
+    border:2px solid #7eb9dc;
+    -webkit-border-radius: 5px;
+    border-radius: 7px;
 }
