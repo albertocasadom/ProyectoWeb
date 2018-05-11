@@ -31,7 +31,7 @@
 			<% if("1".equals(err)){ %>
 			<p> Error al añadir el plato, ya existe un plato con ese nombre </p>
 			<%}%>
-			<img src="carta.jpg" class="img-rounded img-css" height = "400px" width ="800px">
+			<img src="chameli_dallas_menu.png" class="img-rounded img-css" height = "300px" width ="70%">
 			<table class="table-hover ctr table">
 				<thead class="thead-dark">
 					<tr>

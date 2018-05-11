@@ -11,7 +11,6 @@ body{
 label{
 	font-size: 25px;
 	color :#2b3737
-
 }
 
 #txtalgn{
@@ -22,7 +21,7 @@ label{
 	margin: .3em 47px;
 }
 .cntr{
-		margin: .3em 47px;
+	margin: .3em 47px;
 }
 
 .in{
@@ -60,11 +59,11 @@ input[name="create"] {
     -webkit-border-radius: 5px;
     border-radius: 7px;
     position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-top: 30%;
-		margin-left: -40%;
-		width: 120px;
+	top: 50%;
+	left: 50%;
+	margin-top: 30%;
+	margin-left: -40%;
+	width: 120px;
 
 }
 

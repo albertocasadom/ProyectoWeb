@@ -21,7 +21,7 @@
 			.msg{
 				margin-top: 25%;
 				text-align: center;
-				background: rgba(255,255,255,0.5)
+				background: rgba(255,255,255,0.5);
 			}
 			.bt{
 				margin-left: 48.5%;
