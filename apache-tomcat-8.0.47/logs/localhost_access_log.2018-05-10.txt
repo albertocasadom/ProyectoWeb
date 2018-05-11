@@ -1274,3 +1274,5 @@
 163.117.144.203 - - [10/May/2018:20:32:20 +0200] "POST /proyecto/newOrder HTTP/1.1" 500 1497
 163.117.144.203 - - [10/May/2018:20:32:21 +0200] "POST /proyecto/newOrder HTTP/1.1" 500 1497
 163.117.144.203 - - [10/May/2018:20:32:23 +0200] "GET /proyecto/init? HTTP/1.1" 200 2090
+163.117.144.203 - - [10/May/2018:20:33:25 +0200] "POST /proyecto/resttype?id=ff HTTP/1.1" 200 697
+163.117.144.203 - - [10/May/2018:20:33:26 +0200] "GET /proyecto/rest?id=7&cit=Fuenlabrada HTTP/1.1" 200 2249

@@ -51,12 +51,15 @@ $(document).ready(function(){
 			price = parseFloat(price);
 			prc = price - prc;
 			t.find("td:nth-child(3)").text(prc.toFixed(2));
+			
 		}
 
 		var totalprice = $("#totalval").text();
 		 totalprice = parseFloat(totalprice);
-		 totalprice = totalprice - pricem;
-		 $("#totalval").text(totalprice.toFixed(2));
+		 if(totalprice !== 0){
+		 	totalprice = totalprice - pricem;
+		 	$("#totalval").text(totalprice.toFixed(2));
+		 }
 
 		 	console.log(productos);
 		 

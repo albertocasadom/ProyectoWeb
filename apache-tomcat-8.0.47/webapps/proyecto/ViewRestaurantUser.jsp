@@ -13,24 +13,48 @@
 		<style type="text/css"> 
 			.ctr { 
 				text-align: center;
-				font-size: 20px;
+				font-size: 50px;
 			}
 			.img-css{
 				max-width: 50%;
-				margin-left: 27%;
+				margin-left: 25%;
 				border-radius: 30px;
 			}
 			.centre{	
 				padding: -25%;
-			}	
+			}
+			.boxctr{
+				margin-left: 37%;
+			}
+			.in{
+				margin: .3em 47px;
+				border-radius: 7px;
+			}
+			input[type = "text"]{
+				border:2px solid #7eb9dc;
+				padding:3px;
+			}
+			input[type = "tel"]{
+				border:2px solid #7eb9dc;
+				padding:3px;
+			}
+			.inb{
+				margin: .3em 75px;
+			}
+			.fond{
+				background: #c89048;
+			}
 		</style>
 	</head>
-	<body id = "result">
+	<body id = "result" >
 		<% ArrayList<Plato> cart = (ArrayList<Plato>) request.getAttribute("cart"); %>
 		<% User user = (User) session.getAttribute("user"); %>
 		<% String ciudad = (String) request.getAttribute("cit"); %>
 		<% int id_rest = (int) request.getAttribute("id_rest"); %>
-		<img src="carta.jpg" class="img-rounded img-css" height = "400px" width ="800px">
+		<form action = "init">
+				<input type = "submit" class = "btn btn-danger" value = "Volver al inicio">
+		</form>
+		<img src="chameli_dallas_menu.png" class="img-rounded img-css" height = "300px" width ="70%">
 		<form>
 			<input type = "hidden" class = "idrest" id = "<%=id_rest%>">
 			<input type = "hidden" class = "ciudadpedido" id = "<%= ciudad %>">
@@ -58,8 +82,7 @@
 				</tbody>
 			</table>
 		</form>
-
-		<h2> TOTAL DEL PEDIDO </h2>
+		<h4> TOTAL DEL PEDIDO </h4>
 		<table id ="totalpedido" class="table table-hover">
 			<thead class="thead-dark">
 				<tr>
@@ -76,28 +99,33 @@
 				</tbody>
 		</table>	
 
-
-		<h2> DIRECCIÓN DE ENTREGA </h2>
-		<form>
-			<div>
-				<label> Dirección:  </label>
-					<input type = "text" name = "street" id = "str" value = "<%=user.getAddress()%>" required> 
+		<div class = "fond">
+			<h2 class = "ctr"> DIRECCIÓN DE ENTREGA </h2>
+			<div class = "boxctr">
+				<form>
+					<div>
+						<label class = "in"> Dirección:  </label>
+					</div>
+					<div>
+						<input type = "text" name = "street" class = "in" id = "str" value = "<%=user.getAddress()%>" required> 
+					</div>
+					<div>
+						<label class = "in"> Ciudad: </label>
+					</div>
+					<div>
+						<input type = "text" name = "city" class = "in" id = "cit" value = "<%=user.getCiudad()%>" required>
+					</div>
+					<div>
+						<label class = "in"> Número de telefono: </label>
+					</div>
+					<div>
+						<input type = "tel" name = "tele" class = "in" id = "tlf" value = "<%=user.getPhone()%>"required>
+					</div>
+					<div >
+						<input type  ="button" class = "inb butform btn btn-success" value = "Hacer pedido">
+					</div>
+				</form>
 			</div>
-			<div>
-				<label> Ciudad: </label>
-					<input type = "text" name = "city" id = "cit" value = "<%=user.getCiudad()%>" required>
-			</div>
-			<div>
-				<label> Número de telefono: </label>
-					<input type = "tel" name = "tele" id = "tlf" value = "<%=user.getPhone()%>"required>
-			</div>
-			<div>
-				<input type  ="button" class = "butform" value = "Hacer pedido">
-			</div>
-		</form>
-
-		<form action = "init">
-			<input type = submit value = "Volver al inicio">
-		</form>
+		</div>	
 	</body>
 </html>

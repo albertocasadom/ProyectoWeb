@@ -8,11 +8,25 @@
 		<meta charset = "UTF-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<title>Inicio</title>
+		<style type="text/css">
+			.ctr{
+				text-align: center;
+			}
+			.colr{
+				background: Khaki;
+			}
+			.colr:hover{
+				background:white;
+				transition: all 0.5s ease;
+				padding: 15px 15px;
+			}
+			.trwhite{
+				background: white;
+			}
+		</style>
 	</head>
-	<body>
+	<body background = "prueba.jpg" width = "100%" heigth = "100%">
 		<% ArrayList<Order> orderlist = (ArrayList<Order>) session.getAttribute("orders"); %>
-
-
 		<form action = "search" method = "post" class="navbar-form navbar-left" >
 			<div class="form-group">
 				<input type = "search"  class="form-control" name = "rest" placeholder = "Ciudad" required> 
@@ -21,22 +35,22 @@
 		</form class="form-inline">
 			<div class="form-group">
 				<form action = "resttype?id=ff" method = "post">
-					<input type = "submit" class="form-control" class="btn btn-default" value = "Fast Food">
+					<input type = "submit" class="colr form-control" class="btn btn-default" value = "Fast Food">
 				</form>
 				<form action  ="resttype?id=eu"  method = "post">
-					<input type = "submit" class="form-control" class="btn btn-default" value = "Comida Europea">
+					<input type = "submit" class="colr form-control" class="btn btn-default" value = "Comida Europea">
 				</form>
 				<form action = "resttype?id=asa" method = "post"> 
-					<input type = "submit" class="form-control" class="btn btn-default" value = "Asador">
+					<input type = "submit" class="colr form-control" class="btn btn-default" value = "Asador">
 				</form>
 				<form action= "resttype?id=cafe"  method = "post">
-					<input type = "submit" class="form-control" class="btn btn-default" value = "Desayunos / Brunch">
+					<input type = "submit" class="colr form-control" class="btn btn-default" value = "Desayunos / Brunch">
 				</form>
 				<form action = "resttype?id=asia" method = "post">
-					<input type = "submit" class="form-control" class="btn btn-default" value = "Asiatico">  
+					<input type = "submit" class="colr form-control" class="btn btn-default" value = "Asiático">  
 				</form>
 			</div>
-			<table class="table table-hover">
+			<table class="table ctr">
 				<thead class="thead-dark">
 					<tr>
 						<th> Pedido </th>
@@ -48,7 +62,7 @@
 				<tbody>
 					<% if(orderlist.size() < 10){ %>
 						<% for(int i = 0; i< orderlist.size(); i++){ %>
-						<tr>
+						<tr class  ="trwhite">
 							<td> <a href ="seeorder?id=<%=orderlist.get(i).getIdOrder()%>"><%= orderlist.get(i).getIdOrder() %> </a></td>
 							<td> <%= orderlist.get(i).getFechaHora() %> </td>
 							<td> <%= orderlist.get(i).getState() %> </td>
